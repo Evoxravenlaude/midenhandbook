@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Miden Handbook — Community Guide</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #faf8f5;
-      --bg-raised: #f3efe8;
-      --border: rgba(130, 95, 55, 0.13);
-      --border-hover: rgba(196, 82, 10, 0.32);
-      --border-mid: rgba(130, 95, 55, 0.20);
-      --ink: #18120a;
-      --t2: rgba(24, 18, 10, 0.55);
-      --t3: rgba(24, 18, 10, 0.35);
-      --t4: rgba(24, 18, 10, 0.22);
-      --orange: #c4520a;
-      --ob: #e06820;
-      --op: rgba(196, 82, 10, 0.08);
-      --og: rgba(196, 82, 10, 0.11);
-      --brown: #8b5e3c;
-      --bl: #b8946a;
-      --bp: rgba(139, 94, 60, 0.07);
+      --bg:           #faf8f5;
+      --bg-raised:    #f3efe8;
+      --border:       rgba(130,95,55,0.13);
+      --border-hover: rgba(196,82,10,0.32);
+      --border-mid:   rgba(130,95,55,0.20);
+      --ink:          #18120a;
+      --t2:           rgba(24,18,10,0.55);
+      --t3:           rgba(24,18,10,0.35);
+      --t4:           rgba(24,18,10,0.22);
+      --orange:       #c4520a;
+      --ob:           #e06820;
+      --op:           rgba(196,82,10,0.08);
+      --og:           rgba(196,82,10,0.11);
+      --brown:        #8b5e3c;
+      --bl:           #b8946a;
+      --bp:           rgba(139,94,60,0.07);
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -51,1992 +39,991 @@
 
     body::before {
       content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
       background:
-        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(196, 82, 10, .055) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 35% at 95% 105%, rgba(184, 148, 106, .06) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 30% at 0% 75%, rgba(196, 82, 10, .03) 0%, transparent 55%);
+        radial-gradient(ellipse 90% 55% at 50%  -5%, rgba(196,82,10,.055) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 35% at 95% 105%, rgba(184,148,106,.06) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 0%   75%, rgba(196,82,10,.03) 0%, transparent 55%);
     }
 
     body::after {
       content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      opacity: .65;
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .65;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23n)' opacity='.038'/%3E%3C/svg%3E");
     }
 
     /* ── NAV ─────────────────────────────────── */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      height: 62px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 62px; display: flex; align-items: center; justify-content: space-between;
       padding: 0 44px;
-      background: rgba(250, 248, 245, .9);
+      background: rgba(250,248,245,.9);
       backdrop-filter: blur(28px) saturate(1.3);
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .nav-logo-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -.4px;
-    }
-
-    .nav-logo-sub {
-      font-family: 'Geist Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--t3);
-      display: block;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-name { font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: -.4px; }
+    .nav-logo-sub  { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--t3); display: block; }
 
     .nav-links {
-      display: flex;
-      gap: 2px;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      display: flex; gap: 2px;
+      position: absolute; left: 50%; transform: translateX(-50%);
     }
 
     .nav-link {
-      font-size: 13.5px;
-      color: var(--t2);
-      text-decoration: none;
-      padding: 5px 12px;
-      border-radius: 6px;
+      font-size: 13.5px; color: var(--t2); text-decoration: none;
+      padding: 5px 12px; border-radius: 6px;
       transition: color .18s, background .18s;
     }
-
-    .nav-link:hover {
-      color: var(--ink);
-      background: var(--bp);
-    }
+    .nav-link:hover { color: var(--ink); background: var(--bp); }
 
     .nav-cta {
-      font-size: 13px;
-      font-weight: 600;
-      color: #fff;
-      background: var(--orange);
-      text-decoration: none;
-      padding: 7px 18px;
-      border-radius: 100px;
-      box-shadow: 0 2px 10px rgba(196, 82, 10, .22);
+      font-size: 13px; font-weight: 600; color: #fff; background: var(--orange);
+      text-decoration: none; padding: 7px 18px; border-radius: 100px;
+      box-shadow: 0 2px 10px rgba(196,82,10,.22);
       transition: opacity .18s, transform .18s, box-shadow .18s;
     }
-
-    .nav-cta:hover {
-      opacity: .9;
-      transform: translateY(-1px);
-      box-shadow: 0 5px 18px rgba(196, 82, 10, .32);
-    }
+    .nav-cta:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 5px 18px rgba(196,82,10,.32); }
 
     /* ── HERO ─────────────────────────────────── */
     .hero {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 150px 40px 120px;
-      overflow: hidden;
+      position: relative; z-index: 1; min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 150px 40px 120px; overflow: hidden;
     }
 
     .hero-wm {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      opacity: .025;
-      z-index: 0;
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      pointer-events: none; opacity: .025; z-index: 0;
     }
 
     .eyebrow {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 30px;
-      opacity: 0;
-      animation: fadeUp .9s .1s cubic-bezier(.16, 1, .3, 1) forwards;
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px;
+      opacity: 0; animation: fadeUp .9s .1s cubic-bezier(.16,1,.3,1) forwards;
     }
 
     .eyebrow-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 7px rgba(196, 82, 10, .55);
+      width: 5px; height: 5px; border-radius: 50%; background: var(--orange);
+      box-shadow: 0 0 7px rgba(196,82,10,.55);
       animation: breathe 3s ease-in-out infinite;
     }
 
-    @keyframes breathe {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1)
-      }
-
-      50% {
-        opacity: .3;
-        transform: scale(.75)
-      }
-    }
+    @keyframes breathe { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.75)} }
 
     .eyebrow-txt {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--t3);
+      font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--t3);
     }
 
     .hero h1 {
-      position: relative;
-      z-index: 1;
-      font-size: clamp(56px, 8.5vw, 114px);
-      font-weight: 800;
-      line-height: .93;
-      letter-spacing: -4px;
-      color: var(--ink);
-      max-width: 920px;
-      margin-bottom: 26px;
-      opacity: 0;
-      animation: fadeUp 1s .2s cubic-bezier(.16, 1, .3, 1) forwards;
+      position: relative; z-index: 1;
+      font-size: clamp(56px, 8.5vw, 114px); font-weight: 800; line-height: .93;
+      letter-spacing: -4px; color: var(--ink); max-width: 920px; margin-bottom: 26px;
+      opacity: 0; animation: fadeUp 1s .2s cubic-bezier(.16,1,.3,1) forwards;
     }
 
     .grad {
       background: linear-gradient(95deg, var(--orange), var(--ob) 50%, var(--brown));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .hero-sub {
-      position: relative;
-      z-index: 1;
-      font-size: 17px;
-      color: var(--t2);
-      line-height: 1.65;
-      max-width: 520px;
-      margin-bottom: 44px;
-      letter-spacing: -.2px;
-      opacity: 0;
-      animation: fadeUp 1s .32s cubic-bezier(.16, 1, .3, 1) forwards;
+      position: relative; z-index: 1;
+      font-size: 17px; color: var(--t2); line-height: 1.65;
+      max-width: 460px; margin-bottom: 44px; letter-spacing: -.2px;
+      opacity: 0; animation: fadeUp 1s .32s cubic-bezier(.16,1,.3,1) forwards;
     }
 
     .hero-btns {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      opacity: 0;
-      animation: fadeUp 1s .44s cubic-bezier(.16, 1, .3, 1) forwards;
+      position: relative; z-index: 1;
+      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+      opacity: 0; animation: fadeUp 1s .44s cubic-bezier(.16,1,.3,1) forwards;
     }
 
     .btn-p {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #fff;
-      background: var(--orange);
-      text-decoration: none;
-      padding: 11px 24px;
-      border-radius: 100px;
-      box-shadow: 0 3px 14px rgba(196, 82, 10, .25);
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13.5px; font-weight: 600; color: #fff; background: var(--orange);
+      text-decoration: none; padding: 11px 24px; border-radius: 100px;
+      box-shadow: 0 3px 14px rgba(196,82,10,.25);
       transition: opacity .2s, transform .2s, box-shadow .2s;
     }
-
-    .btn-p:hover {
-      opacity: .9;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(196, 82, 10, .35);
-    }
+    .btn-p:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,82,10,.35); }
 
     .btn-g {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--t2);
-      border: 1px solid var(--border-mid);
-      background: transparent;
-      text-decoration: none;
-      padding: 11px 24px;
-      border-radius: 100px;
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13.5px; font-weight: 500; color: var(--t2);
+      border: 1px solid var(--border-mid); background: transparent;
+      text-decoration: none; padding: 11px 24px; border-radius: 100px;
       transition: border-color .2s, color .2s, background .2s, transform .2s;
     }
-
-    .btn-g:hover {
-      border-color: var(--border-hover);
-      color: var(--orange);
-      background: var(--op);
-      transform: translateY(-2px);
-    }
+    .btn-g:hover { border-color: var(--border-hover); color: var(--orange); background: var(--op); transform: translateY(-2px); }
 
     .scroll-hint {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      animation: fadeIn 1.2s 1.1s forwards;
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      opacity: 0; animation: fadeIn 1.2s 1.1s forwards;
     }
 
     .scroll-line {
-      width: 1px;
-      height: 44px;
-      background: linear-gradient(to bottom, rgba(196, 82, 10, .4), transparent);
+      width: 1px; height: 44px;
+      background: linear-gradient(to bottom, rgba(196,82,10,.4), transparent);
       animation: spulse 2.6s ease-in-out infinite;
     }
 
-    @keyframes spulse {
-
-      0%,
-      100% {
-        opacity: .45;
-        transform: scaleY(1)
-      }
-
-      50% {
-        opacity: 1;
-        transform: scaleY(.5)
-      }
-    }
+    @keyframes spulse { 0%,100%{opacity:.45;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(.5)} }
 
     /* ── LAYOUT UTILS ─────────────────────────── */
-    .wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 44px 120px;
-    }
+    .wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 44px 120px; }
 
-    .slabel {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--orange);
-      display: block;
-      margin-bottom: 18px;
-      opacity: .85;
-    }
+    .slabel { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 18px; opacity: .85; }
 
-    .sh2 {
-      font-size: clamp(30px, 4vw, 52px);
-      font-weight: 700;
-      letter-spacing: -2px;
-      line-height: 1;
-      color: var(--ink);
-      margin-bottom: 14px;
-    }
+    .sh2 { font-size: clamp(30px,4vw,52px); font-weight: 700; letter-spacing: -2px; line-height: 1; color: var(--ink); margin-bottom: 14px; }
 
-    .ssub {
-      font-size: 15px;
-      color: var(--t2);
-      max-width: 520px;
-      line-height: 1.65;
-      margin-bottom: 52px;
-      letter-spacing: -.1px;
-    }
+    .ssub { font-size: 15px; color: var(--t2); max-width: 420px; line-height: 1.65; margin-bottom: 52px; letter-spacing: -.1px; }
 
-    .divider {
-      display: block;
-      position: relative;
-      z-index: 1;
-      border: none;
-      border-top: 1px solid var(--border);
-      max-width: 1080px;
-      margin: 0 auto 120px;
-    }
+    .divider { display: block; position: relative; z-index: 1; border: none; border-top: 1px solid var(--border); max-width: 1080px; margin: 0 auto 120px; }
 
     /* ── PILLARS ──────────────────────────────── */
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-    }
+    .pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
 
-    .pillar {
-      background: var(--bg);
-      padding: 32px 28px 36px;
-      transition: background .22s;
-    }
-
-    .pillar:hover {
-      background: var(--bg-raised);
-    }
-
-    .pillar-n {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 1px;
-      color: var(--orange);
-      opacity: .65;
-      margin-bottom: 18px;
-    }
-
-    .pillar-t {
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: -.4px;
-      color: var(--ink);
-      margin-bottom: 10px;
-    }
-
-    .pillar-d {
-      font-size: 13.5px;
-      color: var(--t2);
-      line-height: 1.65;
-    }
+    .pillar { background: var(--bg); padding: 32px 28px 36px; transition: background .22s; }
+    .pillar:hover { background: var(--bg-raised); }
+    .pillar-n { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--orange); opacity: .65; margin-bottom: 18px; }
+    .pillar-t { font-size: 16px; font-weight: 600; letter-spacing: -.4px; color: var(--ink); margin-bottom: 10px; }
+    .pillar-d { font-size: 13.5px; color: var(--t2); line-height: 1.65; }
 
     /* ── CHAPTERS ─────────────────────────────── */
-    .ch-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-    }
+    .ch-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
 
     .ch-card {
-      position: relative;
-      background: var(--bg);
-      padding: 28px 26px 30px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      overflow: hidden;
-      min-height: 200px;
-      transition: background .25s cubic-bezier(.16, 1, .3, 1);
+      position: relative; background: var(--bg); padding: 28px 26px 30px;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: 10px;
+      overflow: hidden; min-height: 200px;
+      transition: background .25s cubic-bezier(.16,1,.3,1);
     }
 
     .ch-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 100% 70% at 50% -10%, var(--og), transparent 65%);
-      opacity: 0;
-      transition: opacity .3s;
-      pointer-events: none;
+      opacity: 0; transition: opacity .3s; pointer-events: none;
     }
 
-    .ch-card:hover {
-      background: var(--bg-raised);
-    }
-
-    .ch-card:hover::after {
-      opacity: 1;
-    }
+    .ch-card:hover { background: var(--bg-raised); }
+    .ch-card:hover::after { opacity: 1; }
 
     .ch-featured {
-      grid-column: span 3;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding: 36px;
-      min-height: 150px;
+      grid-column: span 3; flex-direction: row; align-items: flex-start;
+      justify-content: space-between; padding: 36px; min-height: 150px;
     }
 
-    .ch-fl {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .ch-fl { flex: 1; display: flex; flex-direction: column; gap: 10px; }
 
     .ch-deco {
-      width: 180px;
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 7px;
-      opacity: .18;
-      transition: opacity .3s;
+      width: 180px; flex-shrink: 0;
+      display: flex; flex-direction: column; justify-content: center; align-items: flex-end;
+      gap: 7px; opacity: .18; transition: opacity .3s;
     }
+    .ch-card:hover .ch-deco { opacity: .42; }
 
-    .ch-card:hover .ch-deco {
-      opacity: .42;
-    }
+    .dbar { height: 1px; border-radius: 1px; background: linear-gradient(90deg, var(--orange), var(--bl)); }
 
-    .dbar {
-      height: 1px;
-      border-radius: 1px;
-      background: linear-gradient(90deg, var(--orange), var(--bl));
-    }
-
-    .cn {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 1px;
-      color: var(--t4);
-    }
+    .cn { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--t4); }
 
     .ctag {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: .8px;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 4px;
-      border: 1px solid rgba(196, 82, 10, .2);
-      color: var(--orange);
-      background: var(--op);
+      display: inline-flex; align-items: center; width: fit-content;
+      font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .8px; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 4px;
+      border: 1px solid rgba(196,82,10,.2); color: var(--orange); background: var(--op);
     }
 
-    .ct {
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: -.5px;
-      color: var(--ink);
-      line-height: 1.2;
-    }
-
-    .ch-featured .ct {
-      font-size: 22px;
-      letter-spacing: -.8px;
-    }
-
-    .cd {
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--t2);
-    }
+    .ct { font-size: 17px; font-weight: 600; letter-spacing: -.5px; color: var(--ink); line-height: 1.2; }
+    .ch-featured .ct { font-size: 22px; letter-spacing: -.8px; }
+    .cd { font-size: 13px; line-height: 1.6; color: var(--t2); }
 
     .carr {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      color: var(--t4);
-      transition: color .2s, gap .2s;
+      margin-top: auto; display: flex; align-items: center; gap: 5px;
+      font-size: 12px; color: var(--t4); transition: color .2s, gap .2s;
     }
-
-    .ch-card:hover .carr {
-      color: var(--orange);
-      gap: 9px;
-    }
+    .ch-card:hover .carr { color: var(--orange); gap: 9px; }
 
     /* ── TEAM ─────────────────────────────────── */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
 
     .team-card {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      background: var(--bg);
-      opacity: 0;
-      transform: translateY(28px) scale(.97);
-      transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1),
-        border-color .25s, box-shadow .3s;
+      border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; background: var(--bg);
+      /* entry animation */
+      opacity: 0; transform: translateY(28px) scale(.97);
+      transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1),
+                  border-color .25s, box-shadow .3s;
     }
 
-    .team-card.in {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+    .team-card.in { opacity: 1; transform: translateY(0) scale(1); }
+    .team-card.in:hover { border-color: var(--border-hover); box-shadow: 0 14px 40px rgba(196,82,10,.11); transform: translateY(-5px) scale(1); }
 
-    .team-card.in:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 14px 40px rgba(196, 82, 10, .11);
-      transform: translateY(-5px) scale(1);
-    }
+    .td1 { transition-delay: .05s; }
+    .td2 { transition-delay: .16s; }
+    .td3 { transition-delay: .27s; }
 
-    .td1 {
-      transition-delay: .05s;
-    }
-
-    .td2 {
-      transition-delay: .10s;
-    }
-
-    .td3 {
-      transition-delay: .15s;
-    }
-
-    .td4 {
-      transition-delay: .20s;
-    }
-
-    .td5 {
-      transition-delay: .25s;
-    }
-
-    .td6 {
-      transition-delay: .30s;
-    }
-
-    .td7 {
-      transition-delay: .35s;
-    }
-
-    .td8 {
-      transition-delay: .40s;
-    }
-
-    .td9 {
-      transition-delay: .45s;
-    }
-
-    .td10 {
-      transition-delay: .50s;
-    }
-
-    .td11 {
-      transition-delay: .55s;
-    }
-
-    .td12 {
-      transition-delay: .60s;
-    }
-
-    .td13 {
-      transition-delay: .65s;
-    }
-
-    .td14 {
-      transition-delay: .70s;
-    }
-
-    .t-avatar {
-      position: relative;
-      height: 240px;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--bg-raised), #ebe5d8);
-    }
+    /* Avatar area */
+    .t-avatar { position: relative; height: 200px; overflow: hidden; }
 
     .t-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .5s cubic-bezier(.16, 1, .3, 1);
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s cubic-bezier(.16,1,.3,1);
     }
+    .team-card:hover .t-avatar img { transform: scale(1.05); }
 
-    .team-card:hover .t-avatar img {
-      transform: scale(1.05);
+    /* Fallback illustrated avatar (for pseudonymous Bobbin) */
+    .t-avatar-svg {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .5s cubic-bezier(.16,1,.3,1);
     }
+    .team-card:hover .t-avatar-svg { transform: scale(1.05); }
 
-    /* Fallback for broken images */
-    .t-avatar img[src]:not([src=""]) {
-      display: block;
-    }
-
-
+    /* Gradient fade from avatar into body */
     .t-fade {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 90px;
+      position: absolute; bottom: 0; left: 0; right: 0; height: 90px;
       background: linear-gradient(to top, var(--bg), transparent);
       pointer-events: none;
     }
 
-    .t-body {
-      padding: 20px 24px 26px;
-    }
+    .t-body { padding: 20px 24px 26px; }
 
     .t-role {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 5px;
-      opacity: .8;
+      font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--orange); margin-bottom: 5px; opacity: .8;
     }
 
-    .t-name {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -.5px;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
+    .t-name { font-size: 20px; font-weight: 700; letter-spacing: -.5px; color: var(--ink); margin-bottom: 10px; }
 
-    .t-bio {
-      font-size: 12.5px;
-      line-height: 1.6;
-      color: var(--t2);
-      margin-bottom: 16px;
-    }
+    .t-bio { font-size: 13px; line-height: 1.68; color: var(--t2); margin-bottom: 18px; }
 
     .t-handle {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-family: 'Geist Mono', monospace;
-      font-size: 11.5px;
-      color: var(--t3);
-      text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'Geist Mono', monospace; font-size: 12px;
+      color: var(--t3); text-decoration: none;
+      padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border);
       transition: color .18s, border-color .18s, background .18s;
     }
+    .t-handle:hover { color: var(--orange); border-color: var(--border-hover); background: var(--op); }
 
-    .t-handle:hover {
-      color: var(--orange);
-      border-color: var(--border-hover);
-      background: var(--op);
-    }
-
-    .xi {
-      width: 13px;
-      height: 13px;
-      flex-shrink: 0;
-      opacity: .7;
-    }
+    .xi { width: 13px; height: 13px; flex-shrink: 0; opacity: .7; }
 
     /* ── ECOSYSTEM CARDS ──────────────────────── */
-    .eco-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
+    .eco-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
 
     .eco-card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--bg);
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      opacity: 0;
-      transform: translateY(20px) scale(.97);
+      border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+      background: var(--bg); text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      /* entry */
+      opacity: 0; transform: translateY(20px) scale(.97);
     }
 
     .eco-card.in {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      transition: opacity .6s cubic-bezier(.16, 1, .3, 1), transform .6s cubic-bezier(.16, 1, .3, 1),
-        border-color .25s, box-shadow .3s;
+      opacity: 1; transform: translateY(0) scale(1);
+      transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1),
+                  border-color .25s, box-shadow .3s;
     }
 
-    .eco-card.in:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 8px 28px rgba(196, 82, 10, .11);
-      transform: translateY(-4px);
-    }
+    .eco-card.in:hover { border-color: var(--border-hover); box-shadow: 0 8px 28px rgba(196,82,10,.11); transform: translateY(-4px); }
 
-    .e1 {
-      transition-delay: .04s
-    }
+    .e1{transition-delay:.04s} .e2{transition-delay:.10s} .e3{transition-delay:.16s} .e4{transition-delay:.22s}
+    .e5{transition-delay:.28s} .e6{transition-delay:.34s} .e7{transition-delay:.40s} .e8{transition-delay:.46s}
 
-    .e2 {
-      transition-delay: .10s
-    }
-
-    .e3 {
-      transition-delay: .16s
-    }
-
-    .e4 {
-      transition-delay: .22s
-    }
-
-    .e5 {
-      transition-delay: .28s
-    }
-
-    .e6 {
-      transition-delay: .34s
-    }
-
-    .e7 {
-      transition-delay: .40s
-    }
-
-    .e8 {
-      transition-delay: .46s
-    }
-
+    /* Visual banner area */
     .eco-vis {
-      height: 80px;
-      position: relative;
-      overflow: hidden;
-      transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+      height: 80px; position: relative; overflow: hidden;
+      transition: transform .4s cubic-bezier(.16,1,.3,1);
     }
+    .eco-card:hover .eco-vis { transform: scale(1.06); }
 
-    .eco-card:hover .eco-vis {
-      transform: scale(1.06);
-    }
-
+    /* Project logo overlay */
     .eco-logo-wrap {
-      position: absolute;
-      bottom: 10px;
-      left: 12px;
-      display: flex;
-      align-items: center;
-      gap: 7px;
+      position: absolute; bottom: 10px; left: 12px;
+      display: flex; align-items: center; gap: 7px;
     }
 
     .eco-fav {
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      object-fit: contain;
-      background: #fff;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, .12);
+      width: 26px; height: 26px; border-radius: 6px;
+      object-fit: contain; background: #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,.12);
+      /* hide broken images gracefully */
     }
 
-    .eco-body {
-      padding: 12px 14px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      flex: 1;
+    .eco-fav-fallback {
+      width: 26px; height: 26px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,.12);
+      flex-shrink: 0;
     }
 
-    .eco-name {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: -.3px;
-      color: var(--ink);
-    }
+    .eco-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
 
-    .eco-desc {
-      font-size: 12px;
-      color: var(--t3);
-      line-height: 1.5;
-    }
+    .eco-name { font-size: 14px; font-weight: 600; letter-spacing: -.3px; color: var(--ink); }
+    .eco-desc { font-size: 12px; color: var(--t3); line-height: 1.5; }
 
     .eco-foot {
       padding: 0 14px 12px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 11px;
-      color: var(--t4);
+      display: flex; align-items: center; gap: 4px;
+      font-size: 11px; color: var(--t4);
       transition: color .2s, gap .2s;
     }
-
-    .eco-card:hover .eco-foot {
-      color: var(--orange);
-      gap: 7px;
-    }
+    .eco-card:hover .eco-foot { color: var(--orange); gap: 7px; }
 
     /* ── CTA ──────────────────────────────────── */
     .cta-box {
-      position: relative;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 84px 48px;
-      text-align: center;
-      overflow: hidden;
-      background: rgba(174, 134, 90, .05);
+      position: relative; border: 1px solid var(--border); border-radius: 16px;
+      padding: 84px 48px; text-align: center; overflow: hidden; background: rgba(174,134,90,.05);
     }
 
     .cta-box::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: 5%;
-      right: 5%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(196, 82, 10, .38), rgba(224, 104, 32, .5), rgba(196, 82, 10, .38), transparent);
+      content: ''; position: absolute; top: -1px; left: 5%; right: 5%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,82,10,.38), rgba(224,104,32,.5), rgba(196,82,10,.38), transparent);
     }
 
     .cta-box::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 15%;
-      right: 15%;
-      height: 160px;
-      background: radial-gradient(ellipse at top, rgba(196, 82, 10, .06), transparent 70%);
+      content: ''; position: absolute; top: 0; left: 15%; right: 15%; height: 160px;
+      background: radial-gradient(ellipse at top, rgba(196,82,10,.06), transparent 70%);
       pointer-events: none;
     }
 
-    .cta-wm {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      opacity: .04;
-      pointer-events: none;
-    }
+    .cta-wm { position: absolute; bottom: -20px; right: -20px; opacity: .04; pointer-events: none; }
 
-    .cta-lbl {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 20px;
-      opacity: .8;
-    }
-
-    .cta-h2 {
-      font-size: clamp(28px, 4vw, 52px);
-      font-weight: 700;
-      letter-spacing: -2px;
-      color: var(--ink);
-      margin-bottom: 14px;
-      line-height: 1;
-    }
-
-    .cta-sub {
-      font-size: 15px;
-      color: var(--t2);
-      max-width: 420px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-    }
-
-    .cta-btns {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .cta-lbl { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; opacity: .8; }
+    .cta-h2  { font-size: clamp(28px,4vw,52px); font-weight: 700; letter-spacing: -2px; color: var(--ink); margin-bottom: 14px; line-height: 1; }
+    .cta-sub { font-size: 15px; color: var(--t2); max-width: 380px; margin: 0 auto 40px; line-height: 1.6; }
+    .cta-btns { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 
     /* ── FOOTER ───────────────────────────────── */
     footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 36px 44px;
-      max-width: 1080px;
-      margin: 0 auto;
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border); padding: 36px 44px;
+      max-width: 1080px; margin: 0 auto;
     }
 
-    .foot-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 28px;
-      margin-bottom: 32px;
-    }
+    .foot-top { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 28px; margin-bottom: 32px; }
 
-    .foot-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .foot-brand { display: flex; flex-direction: column; gap: 8px; }
+    .foot-tag { font-size: 13px; color: var(--t3); max-width: 220px; line-height: 1.5; margin-top: 4px; }
 
-    .foot-tag {
-      font-size: 13px;
-      color: var(--t3);
-      max-width: 220px;
-      line-height: 1.5;
-      margin-top: 4px;
-    }
-
-    .foot-cols {
-      display: flex;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-
-    .foot-col {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .foot-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+    .foot-col  { display: flex; flex-direction: column; gap: 8px; }
 
     .foot-col-lbl {
-      font-family: 'Geist Mono', monospace;
-      font-size: 9.5px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--t4);
-      margin-bottom: 6px;
-      display: block;
+      font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--t4); margin-bottom: 6px; display: block;
     }
 
-    .foot-link {
-      font-size: 13px;
-      color: var(--t3);
-      text-decoration: none;
-      transition: color .18s;
-    }
-
-    .foot-link:hover {
-      color: var(--orange);
-    }
+    .foot-link { font-size: 13px; color: var(--t3); text-decoration: none; transition: color .18s; }
+    .foot-link:hover { color: var(--orange); }
 
     .foot-btm {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px; padding-top: 24px; border-top: 1px solid var(--border);
     }
 
-    .foot-copy {
-      font-size: 12px;
-      color: var(--t4);
-    }
+    .foot-copy   { font-size: 12px; color: var(--t4); }
+    .foot-credit { font-size: 12px; color: var(--t4); }
+    .foot-credit a { color: var(--t3); text-decoration: none; transition: color .18s; }
+    .foot-credit a:hover { color: var(--orange); }
 
-    .foot-credit {
-      font-size: 12px;
-      color: var(--t4);
-    }
-
-    .foot-credit a {
-      color: var(--t3);
-      text-decoration: none;
-      transition: color .18s;
-    }
-
-    .foot-credit a:hover {
-      color: var(--orange);
-    }
-
-    .socials {
-      display: flex;
-      gap: 6px;
-    }
+    .socials { display: flex; gap: 6px; }
 
     .soc {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
-      border: 1px solid var(--border);
-      color: var(--t3);
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 500;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 7px;
+      border: 1px solid var(--border); color: var(--t3); text-decoration: none;
+      font-size: 12px; font-weight: 500;
       transition: color .18s, border-color .18s, background .18s;
     }
-
-    .soc:hover {
-      color: var(--orange);
-      border-color: var(--border-hover);
-      background: var(--op);
-    }
+    .soc:hover { color: var(--orange); border-color: var(--border-hover); background: var(--op); }
 
     /* ── ANIMATIONS ───────────────────────────── */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(22px)
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0)
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0
-      }
-
-      to {
-        opacity: 1
-      }
-    }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 
     .rv {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .85s cubic-bezier(.16, 1, .3, 1), transform .85s cubic-bezier(.16, 1, .3, 1);
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1);
     }
+    .rv.in { opacity: 1; transform: translateY(0); }
 
-    .rv.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .d1 {
-      transition-delay: .05s
-    }
-
-    .d2 {
-      transition-delay: .13s
-    }
-
-    .d3 {
-      transition-delay: .21s
-    }
-
-    .d4 {
-      transition-delay: .29s
-    }
+    .d1{transition-delay:.05s} .d2{transition-delay:.13s} .d3{transition-delay:.21s} .d4{transition-delay:.29s}
 
     /* ── RESPONSIVE ───────────────────────────── */
     @media (max-width: 960px) {
-      nav {
-        padding: 0 20px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero,
-      .wrap {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2.5px;
-      }
-
-      .pillars,
-      .ch-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .ch-featured {
-        grid-column: span 1;
-        flex-direction: column;
-      }
-
-      .ch-deco {
-        display: none;
-      }
-
-      .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .eco-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .cta-box {
-        padding: 52px 24px;
-      }
-
-      footer {
-        padding: 28px 20px;
-      }
-
-      .divider {
-        margin-left: 20px;
-        margin-right: 20px;
-      }
-
-      .foot-cols {
-        gap: 24px;
-      }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero, .wrap { padding-left: 20px; padding-right: 20px; }
+      .hero h1 { letter-spacing: -2.5px; }
+      .pillars, .ch-grid, .team-grid { grid-template-columns: 1fr; }
+      .ch-featured { grid-column: span 1; flex-direction: column; }
+      .ch-deco { display: none; }
+      .eco-grid { grid-template-columns: repeat(2,1fr); }
+      .cta-box { padding: 52px 24px; }
+      footer { padding: 28px 20px; }
+      .divider { margin-left: 20px; margin-right: 20px; }
+      .foot-cols { gap: 24px; }
     }
 
     @media (max-width: 560px) {
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .eco-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-        font-size: clamp(44px, 12vw, 72px);
-      }
+      .eco-grid { grid-template-columns: 1fr; }
+      .hero h1 { letter-spacing: -2px; font-size: clamp(44px,12vw,72px); }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ══ NAV ══════════════════════════════════════ -->
-  <nav>
-    <a href="#" class="nav-logo">
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-        <rect width="30" height="30" rx="7" fill="#c4520a" />
-        <path d="M7 22V9L15 16.5L23 9V22" stroke="white" stroke-width="2.2" stroke-linecap="round"
-          stroke-linejoin="round" />
-      </svg>
-      <div>
-        <div class="nav-logo-name">Miden Handbook</div>
-        <span class="nav-logo-sub">Community Guide</span>
+<!-- ══ NAV ══════════════════════════════════════ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <rect width="30" height="30" rx="7" fill="#c4520a"/>
+      <path d="M7 22V9L15 16.5L23 9V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <div class="nav-logo-name">Miden Handbook</div>
+      <span class="nav-logo-sub">Community Guide</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="https://miden.xyz/testnet"    class="nav-link">Testnet</a>
+    <a href="https://miden.xyz/ecosystem"  class="nav-link">Ecosystem</a>
+    <a href="https://miden.xyz/developers" class="nav-link">Developers</a>
+    <a href="https://miden.xyz/about"      class="nav-link">About</a>
+    <a href="https://miden.xyz"            class="nav-link">miden.xyz</a>
+  </div>
+
+  <a href="https://miden.xyz/testnet" class="nav-cta">Join Testnet →</a>
+</nav>
+
+
+<!-- ══ HERO ═════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-wm">
+    <svg width="700" height="700" viewBox="0 0 100 100" fill="none">
+      <path d="M10 80V20L50 58L90 20V80" stroke="#c4520a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="eyebrow">
+    <span class="eyebrow-dot"></span>
+    <span class="eyebrow-txt">Edge Blockchain · Programmable Privacy · Community Handbook</span>
+  </div>
+
+  <h1>Learn Miden.<br /><span class="grad">Understand everything.</span></h1>
+
+  <p class="hero-sub">A community-built guide to Miden — the programmable privacy network for the next generation of compliant finance. From first principles to building on the network.</p>
+
+  <div class="hero-btns">
+    <a href="#chapters" class="btn-p">
+      Start Reading
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="https://miden.xyz/developers" class="btn-g">
+      Developer Docs
+      <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="https://miden.xyz/testnet" class="btn-g">
+      Join Testnet
+      <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="scroll-hint"><div class="scroll-line"></div></div>
+</section>
+
+
+<!-- ══ WHAT IS MIDEN ═════════════════════════════ -->
+<div class="wrap">
+  <span class="slabel rv d1">// What is Miden</span>
+  <h2 class="sh2 rv d2">Practical privacy<br />for the future of finance.</h2>
+  <p class="ssub rv d3">Miden combines high throughput, private transactions, and verifiable computation — designed to power the next generation of financial applications that demand both privacy and compliance.</p>
+
+  <div class="pillars rv d3">
+    <div class="pillar">
+      <div class="pillar-n">01</div>
+      <div class="pillar-t">Customizable Privacy</div>
+      <div class="pillar-d">Miden gives builders the choice between public and private transactions, enabling a new class of business applications that demand both compliance and confidentiality.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">02</div>
+      <div class="pillar-t">Quantum Secure</div>
+      <div class="pillar-d">Built with post-quantum cryptography, Miden is designed to future-proof your business on-chain — ready for what comes after today's cryptographic standards.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">03</div>
+      <div class="pillar-t">Regulation Ready</div>
+      <div class="pillar-d">With programmable privacy at its core, Miden is built for a future of regulatory clarity — enabling selective disclosure, compliance proofs, and auditable privacy flows.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider rv" />
+
+
+<!-- ══ CHAPTERS ══════════════════════════════════ -->
+<div class="wrap" id="chapters">
+  <span class="slabel rv d1">// Handbook Chapters</span>
+  <h2 class="sh2 rv d2">Everything you need<br />to understand Miden.</h2>
+  <p class="ssub rv d3">Nine chapters covering every layer of the Miden protocol — from why it was built to how to develop on it.</p>
+
+  <div class="ch-grid rv d2">
+
+    <a href="https://miden.xyz/" class="ch-card ch-featured">
+      <div class="ch-fl">
+        <span class="cn">01</span>
+        <span class="ctag">Start Here</span>
+        <div class="ct">What is Miden?</div>
+        <div class="cd">A clear, simple introduction to what Miden is, why programmable privacy matters, and how Miden is building the next generation of compliant finance infrastructure.</div>
+        <div class="carr">Read chapter <span>→</span></div>
+      </div>
+      <div class="ch-deco">
+        <div class="dbar" style="width:100%"></div>
+        <div class="dbar" style="width:70%"></div>
+        <div class="dbar" style="width:88%"></div>
+        <div class="dbar" style="width:52%"></div>
+        <div class="dbar" style="width:78%"></div>
+        <div class="dbar" style="width:38%"></div>
       </div>
     </a>
 
-    <div class="nav-links">
-      <a href="https://miden.xyz/testnet" class="nav-link">Testnet</a>
-      <a href="https://miden.xyz/ecosystem" class="nav-link">Ecosystem</a>
-      <a href="https://miden.xyz/developers" class="nav-link">Developers</a>
-      <a href="https://miden.xyz/about" class="nav-link">About</a>
-      <a href="https://miden.xyz" class="nav-link">miden.xyz</a>
+    <a href="https://miden.xyz/about"      class="ch-card"><span class="cn">02</span><span class="ctag">Context</span><div class="ct">Why Miden Exists</div><div class="cd">The problem with today's blockchain privacy and why Miden was built to enable practical, compliant, programmable privacy at scale.</div><div class="carr">Read chapter <span>→</span></div></a>
+    <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">03</span><span class="ctag">Core</span><div class="ct">Core Concepts</div><div class="cd">Zero-knowledge proofs, client-side proving, private state, and the Miden VM — the foundational ideas behind the protocol.</div><div class="carr">Read chapter <span>→</span></div></a>
+    <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">04</span><span class="ctag">Technical</span><div class="ct">How Miden Works</div><div class="cd">Architecture deep-dive — accounts, notes, transactions, the Miden VM, and how privacy is enforced at the protocol layer.</div><div class="carr">Read chapter <span>→</span></div></a>
+    <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">05</span><span class="ctag">Privacy</span><div class="ct">Public vs Private</div><div class="cd">Understanding the spectrum of privacy in Miden — when to use public transactions, private notes, and selective disclosure.</div><div class="carr">Read chapter <span>→</span></div></a>
+    <a href="https://miden.xyz/testnet"    class="ch-card"><span class="cn">06</span><span class="ctag">Testnet</span><div class="ct">Using the Testnet</div><div class="cd">How to connect, set up your wallet, make your first private transaction, and test your application in a live environment.</div><div class="carr">Read chapter <span>→</span></div></a>
+    <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">07</span><span class="ctag">Build</span><div class="ct">Building on Miden</div><div class="cd">Smart contracts, the Miden SDK, account abstractions, note scripts — everything you need to start shipping applications on Miden.</div><div class="carr">Read chapter <span>→</span></div></a>
+    <a href="https://miden.xyz/ecosystem"  class="ch-card"><span class="cn">08</span><span class="ctag">Ecosystem</span><div class="ct">The Miden Ecosystem</div><div class="cd">Pioneer program, projects, partners — a map of the growing ecosystem being built on the Miden programmable privacy network.</div><div class="carr">Read chapter <span>→</span></div></a>
+    <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">09</span><span class="ctag">Reference</span><div class="ct">Glossary</div><div class="cd">All Miden-specific terms, concepts, and acronyms explained clearly — your quick-reference guide to the protocol's vocabulary.</div><div class="carr">Read chapter <span>→</span></div></a>
+
+  </div>
+</div>
+
+<hr class="divider rv" />
+
+
+<!-- ══ TEAM ══════════════════════════════════════ -->
+<div class="wrap" id="team">
+  <span class="slabel rv d1">// The Team</span>
+  <h2 class="sh2 rv d2">The builders behind Miden.</h2>
+  <p class="ssub rv d3">Engineers, cryptographers, and product thinkers — former Meta/Facebook blockchain researchers focused on turning advanced ZK research into real financial infrastructure.</p>
+
+  <div class="team-grid">
+
+    <!-- ── Bobbin Threadbare ─────────────────── -->
+    <div class="team-card td1">
+      <div class="t-avatar">
+        <!-- Illustrated avatar — Bobbin is pseudonymous by choice -->
+        <div class="t-avatar-svg">
+          <svg width="100%" height="100%" viewBox="0 0 380 200" fill="none">
+            <rect width="380" height="200" fill="#f0ebe0"/>
+            <!-- Concentric STARK rings — ZK theme -->
+            <circle cx="190" cy="100" r="170" fill="rgba(196,82,10,.025)"/>
+            <circle cx="190" cy="100" r="120" fill="rgba(196,82,10,.035)"/>
+            <circle cx="190" cy="100" r="78"  fill="rgba(196,82,10,.05)"/>
+            <circle cx="190" cy="100" r="44"  fill="rgba(196,82,10,.07)"/>
+            <!-- Miden M watermark -->
+            <path d="M155 155V90L190 128L225 90V155" stroke="rgba(196,82,10,.18)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Grid -->
+            <line x1="0" y1="50" x2="380" y2="50" stroke="rgba(196,82,10,.05)" stroke-width="1"/>
+            <line x1="0" y1="100" x2="380" y2="100" stroke="rgba(196,82,10,.05)" stroke-width="1"/>
+            <line x1="0" y1="150" x2="380" y2="150" stroke="rgba(196,82,10,.05)" stroke-width="1"/>
+            <line x1="95"  y1="0" x2="95"  y2="200" stroke="rgba(196,82,10,.05)" stroke-width="1"/>
+            <line x1="190" y1="0" x2="190" y2="200" stroke="rgba(196,82,10,.05)" stroke-width="1"/>
+            <line x1="285" y1="0" x2="285" y2="200" stroke="rgba(196,82,10,.05)" stroke-width="1"/>
+            <!-- Initials circle -->
+            <circle cx="190" cy="88" r="40" fill="url(#g1)" opacity=".9"/>
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c4520a"/>
+                <stop offset="1" stop-color="#8b5e3c"/>
+              </linearGradient>
+            </defs>
+            <text x="190" y="98" text-anchor="middle" font-size="22" font-weight="800" fill="white" font-family="system-ui">BT</text>
+          </svg>
+        </div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Co-Founder &amp; CTO</div>
+        <div class="t-name">Bobbin Threadbare</div>
+        <div class="t-bio">Former lead ZK researcher at Meta/Facebook's Novi, where he built Winterfell — one of the fastest STARK provers ever written. Creator of the Miden VM and the Distaff VM. Pioneer of the edge blockchain paradigm, and first to release an open-source STARK prover (genSTARK). Widely regarded as one of the foremost STARK experts in the world.</div>
+        <a href="https://x.com/bobbinth" target="_blank" rel="noopener" class="t-handle">
+          <svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @bobbinth
+        </a>
+      </div>
     </div>
 
-    <a href="https://miden.xyz/testnet" class="nav-cta">Join Testnet →</a>
-  </nav>
+    <!-- ── Dominik Schmid ─────────────────────── -->
+    <div class="team-card td2">
+      <div class="t-avatar">
+        <div class="t-avatar-svg">
+          <svg width="100%" height="100%" viewBox="0 0 380 200" fill="none">
+            <rect width="380" height="200" fill="#ece7dc"/>
+            <!-- Hexagonal grid — protocol / architecture theme -->
+            <polygon points="190,18 228,40 228,84 190,106 152,84 152,40" fill="rgba(139,94,60,.07)" stroke="rgba(139,94,60,.14)" stroke-width="1.5"/>
+            <polygon points="190,38 218,54 218,86 190,102 162,86 162,54" fill="rgba(139,94,60,.08)" stroke="rgba(139,94,60,.1)" stroke-width="1"/>
+            <polygon points="190,58 208,68 208,88 190,98 172,88 172,68" fill="rgba(196,82,10,.09)"/>
+            <!-- Node dots -->
+            <circle cx="60"  cy="36" r="4" fill="rgba(196,82,10,.14)"/>
+            <circle cx="320" cy="36" r="4" fill="rgba(196,82,10,.14)"/>
+            <circle cx="60"  cy="170" r="4" fill="rgba(196,82,10,.14)"/>
+            <circle cx="320" cy="170" r="4" fill="rgba(196,82,10,.14)"/>
+            <!-- Connecting lines -->
+            <line x1="60" y1="36" x2="152" y2="40" stroke="rgba(196,82,10,.08)" stroke-width="1"/>
+            <line x1="320" y1="36" x2="228" y2="40" stroke="rgba(196,82,10,.08)" stroke-width="1"/>
+            <!-- Initials -->
+            <circle cx="190" cy="88" r="40" fill="url(#g2)" opacity=".9"/>
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#8b5e3c"/>
+                <stop offset="1" stop-color="#c4520a"/>
+              </linearGradient>
+            </defs>
+            <text x="190" y="98" text-anchor="middle" font-size="22" font-weight="800" fill="white" font-family="system-ui">DS</text>
+          </svg>
+        </div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Co-Founder &amp; Head of Product</div>
+        <div class="t-name">Dominik Schmid</div>
+        <div class="t-bio">Former engineer at ConsenSys and the Raiden Network. Leads product and protocol design at Miden, responsible for the account-and-note model at the heart of Miden's privacy architecture. Architect of Miden's tiered sparse Merkle tree and its approach to parallel, private transaction execution.</div>
+        <a href="https://x.com/schmiddominik1" target="_blank" rel="noopener" class="t-handle">
+          <svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @schmiddominik1
+        </a>
+      </div>
+    </div>
+
+    <!-- ── Azeem Khan ─────────────────────────── -->
+    <div class="team-card td3">
+      <div class="t-avatar">
+        <!-- Use GitHub avatar for Azeem (publicly visible) -->
+        <img
+          src="https://pbs.twimg.com/profile_images/1827041898651791360/gXnGZXvX_400x400.jpg"
+          alt="Azeem Khan"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        />
+        <!-- Fallback SVG if image fails -->
+        <div class="t-avatar-svg" style="display:none">
+          <svg width="100%" height="100%" viewBox="0 0 380 200" fill="none">
+            <rect width="380" height="200" fill="#f2ece3"/>
+            <path d="M0 110 Q95 55 190 110 Q285 165 380 110" stroke="rgba(196,82,10,.14)" stroke-width="2" fill="none"/>
+            <path d="M0 130 Q95 75 190 130 Q285 185 380 130" stroke="rgba(196,82,10,.09)" stroke-width="1.5" fill="none"/>
+            <path d="M0 90 Q95 35 190 90 Q285 145 380 90" stroke="rgba(196,82,10,.09)" stroke-width="1.5" fill="none"/>
+            <circle cx="190" cy="110" r="9" fill="rgba(196,82,10,.18)"/>
+            <circle cx="95" cy="55" r="5" fill="rgba(196,82,10,.12)"/>
+            <circle cx="285" cy="165" r="5" fill="rgba(196,82,10,.12)"/>
+            <circle cx="190" cy="88" r="40" fill="url(#g3)" opacity=".9"/>
+            <defs>
+              <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e06820"/>
+                <stop offset="1" stop-color="#c4520a"/>
+              </linearGradient>
+            </defs>
+            <text x="190" y="98" text-anchor="middle" font-size="22" font-weight="800" fill="white" font-family="system-ui">AK</text>
+          </svg>
+        </div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Co-Founder</div>
+        <div class="t-name">Azeem Khan</div>
+        <div class="t-bio">Former Gitcoin fundraising lead and ex-ConsenSys. Co-founder of MorphL2. Consultant to the UNICEF CryptoFund, WEF Future of Global FinTech contributor, Forbes Crypto columnist, and CoinDesk columnist. Named to the Faces of Crypto Philanthropy list in 2023 &amp; 2024 and 100 Faces of Crypto by Stand With Crypto.</div>
+        <a href="https://x.com/azeemk_" target="_blank" rel="noopener" class="t-handle">
+          <svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @azeemk_
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /team-grid -->
+</div>
+
+<hr class="divider rv" />
 
 
-  <!-- ══ HERO ═════════════════════════════════════ -->
-  <section class="hero">
-    <div class="hero-wm">
-      <svg width="700" height="700" viewBox="0 0 100 100" fill="none">
-        <path d="M10 80V20L50 58L90 20V80" stroke="#c4520a" stroke-width="3" stroke-linecap="round"
-          stroke-linejoin="round" />
+<!-- ══ ECOSYSTEM ═════════════════════════════════ -->
+<div class="wrap" id="ecosystem">
+  <span class="slabel rv d1">// Pioneer Projects</span>
+  <h2 class="sh2 rv d2">Built on Miden.</h2>
+  <p class="ssub rv d3">Top teams supported through the Miden Pioneer Program — building the future of on-chain economies with programmable privacy.</p>
+
+  <div class="eco-grid">
+
+    <!-- Qash -->
+    <a href="https://www.qash.finance/" target="_blank" rel="noopener" class="eco-card e1">
+      <div class="eco-vis" style="background: linear-gradient(135deg,#f5f0e8,#ede5d8)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
+          <rect x="20" y="14" width="260" height="52" rx="9" fill="rgba(196,82,10,.07)"/>
+          <rect x="34" y="26" width="70" height="7" rx="3" fill="rgba(196,82,10,.22)"/>
+          <rect x="34" y="39" width="110" height="5" rx="2" fill="rgba(196,82,10,.12)"/>
+          <rect x="34" y="50" width="80" height="5" rx="2" fill="rgba(196,82,10,.08)"/>
+          <circle cx="240" cy="40" r="18" fill="rgba(196,82,10,.11)" stroke="rgba(196,82,10,.2)" stroke-width="1.5"/>
+          <path d="M233 40h14M240 33v14" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="eco-logo-wrap">
+          <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=qash.finance" alt="Qash" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="eco-body">
+        <div class="eco-name">Qash</div>
+        <div class="eco-desc">B2B Neobank for Payroll &amp; Treasury Management</div>
+      </div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <!-- ZoroSwap -->
+    <a href="https://zoroswap.com/" target="_blank" rel="noopener" class="eco-card e2">
+      <div class="eco-vis" style="background: linear-gradient(135deg,#f0ebe0,#e8e0d0)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
+          <path d="M20 65 Q80 18 150 42 Q220 66 280 18" stroke="rgba(196,82,10,.32)" stroke-width="2" fill="none"/>
+          <circle cx="150" cy="42" r="5" fill="#c4520a" opacity=".6"/>
+          <circle cx="80"  cy="32" r="3" fill="rgba(196,82,10,.32)"/>
+          <circle cx="220" cy="50" r="3" fill="rgba(196,82,10,.32)"/>
+          <rect x="0" y="58" width="300" height="22" fill="rgba(196,82,10,.04)"/>
+          <line x1="0" y1="58" x2="300" y2="58" stroke="rgba(196,82,10,.1)" stroke-width="1"/>
+        </svg>
+        <div class="eco-logo-wrap">
+          <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=zoroswap.com" alt="ZoroSwap" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="eco-body">
+        <div class="eco-name">ZoroSwap</div>
+        <div class="eco-desc">Public/Private Oracle-informed AMM</div>
+      </div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <!-- Dome -->
+    <a href="https://dome.cash/" target="_blank" rel="noopener" class="eco-card e3">
+      <div class="eco-vis" style="background: linear-gradient(135deg,#eee9df,#e5ddd0)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
+          <circle cx="70"  cy="40" r="22" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.16)" stroke-width="1.5"/>
+          <circle cx="230" cy="40" r="22" fill="rgba(139,94,60,.08)" stroke="rgba(139,94,60,.16)" stroke-width="1.5"/>
+          <path d="M92 36 L208 36 M92 44 L208 44" stroke="rgba(196,82,10,.22)" stroke-width="1.5" stroke-dasharray="5,4"/>
+          <circle cx="150" cy="40" r="8" fill="rgba(196,82,10,.18)"/>
+          <text x="70" y="45" text-anchor="middle" font-size="9" fill="rgba(196,82,10,.5)" font-family="monospace">ETH</text>
+          <text x="230" y="45" text-anchor="middle" font-size="9" fill="rgba(139,94,60,.5)" font-family="monospace">MDN</text>
+        </svg>
+        <div class="eco-logo-wrap">
+          <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=dome.cash" alt="Dome" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="eco-body">
+        <div class="eco-name">Dome</div>
+        <div class="eco-desc">Crosschain Platform for Private Financial Flows</div>
+      </div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <!-- Miden Browser Wallet -->
+    <a href="https://midenbrowserwallet.com/" target="_blank" rel="noopener" class="eco-card e4">
+      <div class="eco-vis" style="background: linear-gradient(135deg,#f2ece2,#e9e1d2)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
+          <rect x="60" y="10" width="180" height="60" rx="8" fill="rgba(196,82,10,.06)" stroke="rgba(196,82,10,.12)" stroke-width="1"/>
+          <rect x="60" y="10" width="180" height="18" rx="8" fill="rgba(196,82,10,.1)"/>
+          <rect x="60" y="20" width="180" height="8" fill="rgba(196,82,10,.08)"/>
+          <rect x="76" y="36" width="55" height="5" rx="2" fill="rgba(196,82,10,.16)"/>
+          <rect x="76" y="46" width="90" height="4" rx="2" fill="rgba(196,82,10,.1)"/>
+          <rect x="76" y="56" width="70" height="4" rx="2" fill="rgba(196,82,10,.07)"/>
+        </svg>
+        <div class="eco-logo-wrap">
+          <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=midenbrowserwallet.com" alt="Miden Wallet" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="eco-body">
+        <div class="eco-name">Miden Wallet</div>
+        <div class="eco-desc">In-browser Wallet for Easy Payments</div>
+      </div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <!-- Inicio Labs -->
+    <a href="https://multisig.miden.xyz/" target="_blank" rel="noopener" class="eco-card e5">
+      <div class="eco-vis" style="background: linear-gradient(135deg,#ede8de,#e3ddd0)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
+          <circle cx="90"  cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)" stroke-width="1.5"/>
+          <circle cx="150" cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)" stroke-width="1.5"/>
+          <circle cx="210" cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)" stroke-width="1.5"/>
+          <path d="M83 40l6-6 4 4 8-8" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M143 40l6-6 4 4 8-8" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M203 40l6-6 4 4 8-8" stroke="rgba(196,82,10,.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="2,2"/>
+        </svg>
+        <div class="eco-logo-wrap">
+          <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=multisig.miden.xyz" alt="Inicio" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="eco-body">
+        <div class="eco-name">Inicio Labs</div>
+        <div class="eco-desc">Multisig Solution for Miden</div>
+      </div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <!-- Miden Name -->
+    <a href="https://miden.name/" target="_blank" rel="noopener" class="eco-card e6">
+      <div class="eco-vis" style="background: linear-gradient(135deg,#f0ebe0,#e7e0d2)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
+          <rect x="45" y="24" width="210" height="32" rx="16" fill="rgba(196,82,10,.07)" stroke="rgba(196,82,10,.16)" stroke-width="1"/>
+          <rect x="62" y="35" width="85" height="10" rx="5" fill="rgba(196,82,10,.14)"/>
+          <text x="215" y="44" text-anchor="middle" font-size="11" fill="rgba(196,82,10,.45)" font-family="monospace" font-weight="600">.miden</text>
+        </svg>
+        <div class="eco-logo-wrap">
+          <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=miden.name" alt="Miden Name" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="eco-body">
+        <div class="eco-name">Miden Name</div>
+        <div class="eco-desc">Name Service for Miden</div>
+      </div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <!-- Walnut -->
+    <a href="https://playground.miden.xyz/" target="_blank" rel="noopener" class="eco-card e7">
+      <div class="eco-vis" style="background: linear-gradient(135deg,#eae4d8,#e0d9ca)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
+          <rect x="40" y="12" width="220" height="56" rx="6" fill="rgba(24,18,10,.06)" stroke="rgba(196,82,10,.1)" stroke-width="1"/>
+          <circle cx="57" cy="26" r="4" fill="rgba(196,82,10,.32)"/>
+          <circle cx="70" cy="26" r="4" fill="rgba(196,82,10,.18)"/>
+          <circle cx="83" cy="26" r="4" fill="rgba(196,82,10,.1)"/>
+          <rect x="52" y="38" width="55" height="4" rx="2" fill="rgba(196,82,10,.22)"/>
+          <rect x="52" y="48" width="95" height="4" rx="2" fill="rgba(196,82,10,.12)"/>
+          <rect x="52" y="57" width="65" height="4" rx="2" fill="rgba(196,82,10,.08)"/>
+          <rect x="116" y="38" width="28" height="4" rx="2" fill="rgba(139,94,60,.28)"/>
+        </svg>
+        <div class="eco-logo-wrap">
+          <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=playground.miden.xyz" alt="Walnut" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="eco-body">
+        <div class="eco-name">Walnut</div>
+        <div class="eco-desc">Miden Playground &amp; Learning Environment</div>
+      </div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <!-- Pioneer Program -->
+    <a href="https://miden.xyz/ecosystem/program/pioneers" target="_blank" rel="noopener" class="eco-card e8">
+      <div class="eco-vis" style="background: linear-gradient(135deg,#f5f0e8,#ebe3d5)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
+          <path d="M150 70 L124 44 L150 52 L176 44 Z" fill="rgba(196,82,10,.12)" stroke="rgba(196,82,10,.22)" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M150 52 L132 30 L150 38 L168 30 Z" fill="rgba(196,82,10,.18)" stroke="rgba(196,82,10,.28)" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="150" cy="24" r="7" fill="rgba(196,82,10,.38)"/>
+          <line x1="150" y1="14" x2="150" y2="16" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="eco-logo-wrap">
+          <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=miden.xyz" alt="Miden" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="eco-body">
+        <div class="eco-name">Pioneer Program</div>
+        <div class="eco-desc">Apply to build with Miden's support &amp; funding</div>
+      </div>
+      <div class="eco-foot">Learn more <span>→</span></div>
+    </a>
+
+  </div><!-- /eco-grid -->
+</div>
+
+<hr class="divider rv" />
+
+
+<!-- ══ CTA ═══════════════════════════════════════ -->
+<div class="wrap">
+  <div class="cta-box rv d2">
+    <div class="cta-wm">
+      <svg width="260" height="260" viewBox="0 0 100 100" fill="none">
+        <path d="M10 80V20L50 58L90 20V80" stroke="#c4520a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-
-    <div class="eyebrow">
-      <span class="eyebrow-dot"></span>
-      <span class="eyebrow-txt">Zero-Knowledge Privacy · Built for Real Finance · Community Guide</span>
-    </div>
-
-    <h1>Understanding Miden<br /><span class="grad">in plain English.</span></h1>
-
-    <p class="hero-sub">A straightforward guide to Miden, the blockchain where you can actually choose what stays
-      private and what doesn't. Built for the real world where businesses need both privacy and compliance.</p>
-
-    <div class="hero-btns">
+    <div class="cta-lbl">// Get Started</div>
+    <h2 class="cta-h2">Start with Chapter One.</h2>
+    <p class="cta-sub">Whether you're a developer, researcher, or simply curious about programmable privacy — this handbook walks you through Miden from the ground up.</p>
+    <div class="cta-btns">
       <a href="#chapters" class="btn-p">
-        Start Reading
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </a>
-      <a href="https://miden.xyz/developers" class="btn-g">
-        Developer Docs
-        <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
+        Read the Handbook
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="https://miden.xyz/testnet" class="btn-g">
         Join Testnet
-        <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-          <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round" />
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://miden.xyz/developers" class="btn-g">
+        Start Building
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div style="display:flex;align-items:center;gap:9px">
+        <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
+          <rect width="30" height="30" rx="7" fill="#c4520a"/>
+          <path d="M7 22V9L15 16.5L23 9V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </a>
+        <span style="font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-.3px">Miden Handbook</span>
+      </div>
+      <p class="foot-tag">A community guide to Miden — programmable privacy for the future of finance.</p>
     </div>
 
-    <div class="scroll-hint">
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-
-  <!-- ══ WHAT IS MIDEN ═════════════════════════════ -->
-  <div class="wrap">
-    <span class="slabel rv d1">// What is Miden</span>
-    <h2 class="sh2 rv d2">Privacy that works<br />in the real world.</h2>
-    <p class="ssub rv d3">Miden lets you pick what's public and what's private on a transaction-by-transaction basis.
-      It's designed for businesses that need to keep some things confidential while staying compliant with regulations.
-    </p>
-
-    <div class="pillars rv d3">
-      <div class="pillar">
-        <div class="pillar-n">01</div>
-        <div class="pillar-t">Choose Your Privacy</div>
-        <div class="pillar-d">Every transaction, you decide: make it public or keep it private. This flexibility is what
-          makes Miden practical for real businesses that need both transparency and confidentiality.</div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <span class="foot-col-lbl">Miden</span>
+        <a href="https://miden.xyz/"             class="foot-link">Website</a>
+        <a href="https://miden.xyz/testnet"       class="foot-link">Testnet</a>
+        <a href="https://miden.xyz/roadmap"       class="foot-link">Roadmap</a>
+        <a href="https://miden.xyz/publications"  class="foot-link">Publications</a>
       </div>
-      <div class="pillar">
-        <div class="pillar-n">02</div>
-        <div class="pillar-t">Ready for the Future</div>
-        <div class="pillar-d">Built with quantum-resistant cryptography so your data stays secure even when quantum
-          computers become mainstream. Think of it as future-proofing.</div>
+      <div class="foot-col">
+        <span class="foot-col-lbl">Build</span>
+        <a href="https://miden.xyz/developers"                   class="foot-link">Developers</a>
+        <a href="https://miden.xyz/ecosystem"                    class="foot-link">Ecosystem</a>
+        <a href="https://miden.xyz/ecosystem/program/pioneers"   class="foot-link">Pioneer Program</a>
+        <a href="https://miden.xyz/about"                        class="foot-link">About</a>
       </div>
-      <div class="pillar">
-        <div class="pillar-n">03</div>
-        <div class="pillar-t">Compliance Built In</div>
-        <div class="pillar-d">Privacy doesn't mean hiding from regulators. Miden lets you prove specific things about
-          your transactions without revealing everything, perfect for businesses that need to stay compliant.</div>
+      <div class="foot-col">
+        <span class="foot-col-lbl">Community</span>
+        <a href="https://x.com/0xMiden"        class="foot-link">Twitter / X</a>
+        <a href="https://t.me/BuildOnMiden"    class="foot-link">Telegram</a>
+        <a href="https://github.com/0xMiden"   class="foot-link">GitHub</a>
+        <a href="/cdn-cgi/l/email-protection#9efdf1f0eafffdeadef3f7fafbf0b0eafbfff3" class="foot-link">Contact</a>
       </div>
     </div>
   </div>
 
-  <hr class="divider rv" />
-
-
-  <!-- ══ CHAPTERS ══════════════════════════════════ -->
-  <div class="wrap" id="chapters">
-    <span class="slabel rv d1">// Handbook Chapters</span>
-    <h2 class="sh2 rv d2">Nine chapters.<br />Zero jargon.</h2>
-    <p class="ssub rv d3">Everything about Miden, explained clearly. From "what is this thing" to "how do I build on
-      it."</p>
-
-    <div class="ch-grid rv d2">
-
-      <a href="https://miden.xyz/" class="ch-card ch-featured">
-        <div class="ch-fl">
-          <span class="cn">01</span>
-          <span class="ctag">Start Here</span>
-          <div class="ct">What is Miden?</div>
-          <div class="cd">A simple intro: what Miden is, why privacy that you can control matters, and how it's
-            different from other blockchains you've heard about.</div>
-          <div class="carr">Read chapter <span>→</span></div>
-        </div>
-        <div class="ch-deco">
-          <div class="dbar" style="width:100%"></div>
-          <div class="dbar" style="width:70%"></div>
-          <div class="dbar" style="width:88%"></div>
-          <div class="dbar" style="width:52%"></div>
-          <div class="dbar" style="width:78%"></div>
-          <div class="dbar" style="width:38%"></div>
-        </div>
-      </a>
-
-      <a href="https://miden.xyz/about" class="ch-card"><span class="cn">02</span><span class="ctag">Context</span>
-        <div class="ct">Why Miden Exists</div>
-        <div class="cd">Most blockchains force you to choose: everything public or everything private. Miden was built
-          because that's not how real businesses work.</div>
-        <div class="carr">Read chapter <span>→</span></div>
-      </a>
-      <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">03</span><span class="ctag">Core</span>
-        <div class="ct">The Building Blocks</div>
-        <div class="cd">Zero-knowledge proofs, private state, the Miden VM — the key ideas that make everything work,
-          explained without the math degree.</div>
-        <div class="carr">Read chapter <span>→</span></div>
-      </a>
-      <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">04</span><span
-          class="ctag">Technical</span>
-        <div class="ct">How It Actually Works</div>
-        <div class="cd">Accounts, notes, transactions, and how Miden keeps things private at the protocol level.
-          Technical but readable.</div>
-        <div class="carr">Read chapter <span>→</span></div>
-      </a>
-      <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">05</span><span class="ctag">Privacy</span>
-        <div class="ct">Public vs Private</div>
-        <div class="cd">When should a transaction be public? When private? When somewhere in between? Here's how to
-          think about it.</div>
-        <div class="carr">Read chapter <span>→</span></div>
-      </a>
-      <a href="https://miden.xyz/testnet" class="ch-card"><span class="cn">06</span><span class="ctag">Testnet</span>
-        <div class="ct">Try It Yourself</div>
-        <div class="cd">How to connect, set up a wallet, and make your first private transaction on the testnet. Get
-          your hands dirty.</div>
-        <div class="carr">Read chapter <span>→</span></div>
-      </a>
-      <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">07</span><span class="ctag">Build</span>
-        <div class="ct">Building on Miden</div>
-        <div class="cd">Smart contracts, the SDK, account abstractions — everything you need to start building apps on
-          Miden.</div>
-        <div class="carr">Read chapter <span>→</span></div>
-      </a>
-      <a href="https://miden.xyz/ecosystem" class="ch-card"><span class="cn">08</span><span
-          class="ctag">Ecosystem</span>
-        <div class="ct">Who's Building</div>
-        <div class="cd">The Pioneer program and the projects already building on Miden. See what's being made on the
-          network.</div>
-        <div class="carr">Read chapter <span>→</span></div>
-      </a>
-      <a href="https://miden.xyz/developers" class="ch-card"><span class="cn">09</span><span
-          class="ctag">Reference</span>
-        <div class="ct">Quick Reference</div>
-        <div class="cd">All the Miden-specific terms you'll run into, explained in plain English. Bookmark this one.
-        </div>
-        <div class="carr">Read chapter <span>→</span></div>
-      </a>
-
+  <div class="foot-btm">
+    <span class="foot-copy">© 2025 Miden Handbook. Community resource — not official Miden documentation.</span>
+    <div class="socials">
+      <a href="https://x.com/0xMiden"      class="soc" title="Twitter/X">𝕏</a>
+      <a href="https://t.me/BuildOnMiden"  class="soc" title="Telegram">✈</a>
+      <a href="https://github.com/0xMiden" class="soc" title="GitHub">⌥</a>
     </div>
+    <span class="foot-credit">Developed by <a href="#">Zeltrax</a></span>
   </div>
-
-  <hr class="divider rv" />
-
-
-  <!-- ══ TEAM ══════════════════════════════════════ -->
-  <div class="wrap" id="team">
-    <span class="slabel rv d1">// The Team</span>
-    <h2 class="sh2 rv d2">The people behind it.</h2>
-    <p class="ssub rv d3">Former Meta/Facebook blockchain researchers and engineers who left to build practical privacy
-      infrastructure for real financial applications.</p>
-
-    <div class="team-grid">
-
-      <!-- Bobbin Threadbare -->
-      <div class="team-card td1">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1488199755429531648/W4MQRrr2_400x400.jpg"
-            alt="Bobbin Threadbare" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Co-Founder & CTO</div>
-          <div class="t-name">Bobbin Threadbare</div>
-          <div class="t-bio">The brain behind Miden's tech. Built Winterfell (one of the fastest STARK provers out
-            there) at Meta's Novi. Created both the Miden VM and Distaff VM. Pioneered the edge blockchain concept and
-            released the first open-source STARK prover. Widely considered a STARK expert.</div>
-          <a href="https://x.com/bobbinth" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @bobbinth
-          </a>
-        </div>
-      </div>
-
-      <!-- Dominik Schmid -->
-      <div class="team-card td2">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1883938260260900864/xKSf-gEY_400x400.jpg"
-            alt="Dominik Schmid" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Co-Founder & Head of Product</div>
-          <div class="t-name">Dominik Schmid</div>
-          <div class="t-bio">Runs product and protocol design. Built the account-and-note model that makes Miden's
-            privacy work. Previously at ConsenSys and Raiden Network. Designed Miden's tiered sparse Merkle tree and
-            parallel transaction execution.</div>
-          <a href="https://x.com/schmiddominik1" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @schmiddominik1
-          </a>
-        </div>
-      </div>
-
-      <!-- Azeem Khan -->
-      <div class="team-card td3">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1827041898651791360/gXnGZXvX_400x400.jpg" alt="Azeem Khan" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Co-Founder</div>
-          <div class="t-name">Azeem Khan</div>
-          <div class="t-bio">The most social of the three founders. Handles strategy, partnerships, fundraising, and
-            comms. Previously led fundraising at Gitcoin and worked at ConsenSys. Co-founded MorphL2. Also advised
-            UNICEF CryptoFund and contributed to WEF's FinTech work.</div>
-          <a href="https://x.com/azeemk_" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @azeemk_
-          </a>
-        </div>
-      </div>
-
-      <!-- Akshit Sharma -->
-      <div class="team-card td4">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1879907516827504640/8fmFWj8z_400x400.jpg"
-            alt="Akshit Sharma" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Head of Operations</div>
-          <div class="t-name">Akshit Sharma</div>
-          <div class="t-bio">Founding team member who makes sure everything actually runs. Handles business ops, people
-            ops, and product ops. The person who keeps the trains running on time.</div>
-          <a href="https://x.com/midenmonk" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @midenmonk
-          </a>
-        </div>
-      </div>
-
-      <!-- Gaylord Warner -->
-      <div class="team-card td5">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1859626738906746880/1s4jw8ie_400x400.jpg"
-            alt="Gaylord Warner" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Core Contributor</div>
-          <div class="t-name">Gaylord Warner</div>
-          <div class="t-bio">Can do almost anything except pick strawberries (apparently). One of those rare people who
-            can jump between different parts of the stack without breaking a sweat.</div>
-          <a href="https://x.com/zkGaylord" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @zkGaylord
-          </a>
-        </div>
-      </div>
-
-      <!-- Ben Schiller -->
-      <div class="team-card td6">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1787102093664522240/LWmrA9Tc_400x400.jpg" alt="Ben Schiller" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Senior Advisor & Head of Comms</div>
-          <div class="t-name">Ben Schiller</div>
-          <div class="t-bio">Been reporting on the internet since Web1. Covered everything from early startups through
-            Web2, now covering Web3. Handles communications at Miden.</div>
-          <a href="https://x.com/btschiller" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @btschiller
-          </a>
-        </div>
-      </div>
-
-      <!-- Alexander John Lee -->
-      <div class="team-card td7">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1750193857063923712/dXzFPXu6_400x400.jpg"
-            alt="Alexander John Lee" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Protocol Engineer & DevRel</div>
-          <div class="t-name">Alexander John Lee</div>
-          <div class="t-bio">Splits time between improving the protocol for better performance and creating tutorials to
-            help developers build on Miden. Makes the tech more usable on both ends.</div>
-          <a href="https://x.com/alexanderlee314" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @alexanderlee314
-          </a>
-        </div>
-      </div>
-
-      <!-- Adrian Hamelink -->
-      <div class="team-card td8">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1857785893754028032/vTt6giFP_400x400.jpg"
-            alt="Adrian Hamelink" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Cryptography Engineer</div>
-          <div class="t-name">Adrian Hamelink</div>
-          <div class="t-bio">Loves the math behind decentralized systems. At Miden, makes sure developers can use the
-            cryptography without needing to understand all the underlying math.</div>
-          <a href="https://x.com/adr1anh" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @adr1anh
-          </a>
-        </div>
-      </div>
-
-      <!-- Marti Gorny -->
-      <div class="team-card td9">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1785644564636155904/jlwcgWYT_400x400.jpg" alt="Marti Gorny" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Engineering Manager</div>
-          <div class="t-name">Marti Gorny</div>
-          <div class="t-bio">Coordinates across protocol, node, and client teams. If Miden needs new architecture for
-            privacy and scalability, he's involved in making it happen.</div>
-          <a href="https://x.com/mmagician" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @mmagician
-          </a>
-        </div>
-      </div>
-
-      <!-- Ahmad Khan -->
-      <div class="team-card td10">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1798416399862263808/eNgwmzNI_400x400.jpg" alt="Ahmad Khan" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Lead Designer</div>
-          <div class="t-name">Ahmad Khan</div>
-          <div class="t-bio">Lead designer for brand and product. That signature Miden dot-matrix/halftone illustration
-            style? That's him. Also might be Azeem's brother.</div>
-          <a href="https://x.com/aesopsolo" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @aesopsolo
-          </a>
-        </div>
-      </div>
-
-      <!-- Daniel Okechukwu -->
-      <div class="team-card td11">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1878101488621142016/4Kx02fhd_400x400.jpg"
-            alt="Daniel Okechukwu" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Writer & Affiliate</div>
-          <div class="t-name">Daniel Okechukwu</div>
-          <div class="t-bio">Joined the team after Buenos Aires. Runs two newsletters: "Baseyaps" covering Base, and "In
-            Nollywood" taking you inside Nollywood. His exact role at Miden is still being figured out.</div>
-          <a href="https://x.com/DanielOkey" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @DanielOkey
-          </a>
-        </div>
-      </div>
-
-      <!-- Serge Radinovich -->
-      <div class="team-card td12">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1825876862073749504/EpglmfP0_400x400.jpg"
-            alt="Serge Radinovich" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Protocol Engineer</div>
-          <div class="t-name">Serge Radinovich</div>
-          <div class="t-bio">Builds the infrastructure that makes everything run. Started in Web3 at Immutable, then
-            ZKPs caught his attention and led him to Miden. Big into gaming.</div>
-          <a href="https://x.com/sergeradd" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @sergeradd
-          </a>
-        </div>
-      </div>
-
-      <!-- Paul Schoenfelder -->
-      <div class="team-card td13">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1702702071887360000/Eb73vKJh_400x400.jpg"
-            alt="Paul Schoenfelder" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">Software Engineer</div>
-          <div class="t-name">Paul Schoenfelder</div>
-          <div class="t-bio">Almost twenty years as a software engineer. Builds the kind of tools that run in production
-            for years without breaking. Once wrote an entire Erlang/Elixir compiler from scratch in Rust.</div>
-          <a href="https://x.com/gotbones" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @gotbones
-          </a>
-        </div>
-      </div>
-
-      <!-- Philipp Keinberger -->
-      <div class="team-card td14">
-        <div class="t-avatar">
-          <img src="https://pbs.twimg.com/profile_images/1883932536119758848/f5qPfT8W_400x400.jpg"
-            alt="Philipp Keinberger" />
-          <div class="t-fade"></div>
-        </div>
-        <div class="t-body">
-          <div class="t-role">DevRel Engineer</div>
-          <div class="t-name">Philipp Keinberger</div>
-          <div class="t-bio">Onboards developers to the Pioneer Program, creates tutorials, and supports people building
-            privacy-focused apps on the testnet.</div>
-          <a href="https://x.com/phil10013" target="_blank" rel="noopener" class="t-handle">
-            <svg class="xi" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            @phil10013
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <hr class="divider rv" />
+</footer>
 
 
-  <!-- ══ ECOSYSTEM ═════════════════════════════════ -->
-  <div class="wrap" id="ecosystem">
-    <span class="slabel rv d1">// Pioneer Projects</span>
-    <h2 class="sh2 rv d2">Already building.</h2>
-    <p class="ssub rv d3">Teams supported through the Miden Pioneer Program — building the first generation of apps on
-      the network.</p>
-
-    <div class="eco-grid">
-
-      <!-- Qash -->
-      <a href="https://www.qash.finance/" target="_blank" rel="noopener" class="eco-card e1">
-        <div class="eco-vis" style="background: linear-gradient(135deg,#f5f0e8,#ede5d8)">
-          <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
-            <rect x="20" y="14" width="260" height="52" rx="9" fill="rgba(196,82,10,.07)" />
-            <rect x="34" y="26" width="70" height="7" rx="3" fill="rgba(196,82,10,.22)" />
-            <rect x="34" y="39" width="110" height="5" rx="2" fill="rgba(196,82,10,.12)" />
-            <rect x="34" y="50" width="80" height="5" rx="2" fill="rgba(196,82,10,.08)" />
-            <circle cx="240" cy="40" r="18" fill="rgba(196,82,10,.11)" stroke="rgba(196,82,10,.2)" stroke-width="1.5" />
-            <path d="M233 40h14M240 33v14" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-          <div class="eco-logo-wrap">
-            <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=qash.finance" alt="Qash"
-              onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="eco-body">
-          <div class="eco-name">Qash</div>
-          <div class="eco-desc">B2B Neobank for Payroll & Treasury</div>
-        </div>
-        <div class="eco-foot">Visit project <span>→</span></div>
-      </a>
-
-      <!-- ZoroSwap -->
-      <a href="https://zoroswap.com/" target="_blank" rel="noopener" class="eco-card e2">
-        <div class="eco-vis" style="background: linear-gradient(135deg,#f0ebe0,#e8e0d0)">
-          <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
-            <path d="M20 65 Q80 18 150 42 Q220 66 280 18" stroke="rgba(196,82,10,.32)" stroke-width="2" fill="none" />
-            <circle cx="150" cy="42" r="5" fill="#c4520a" opacity=".6" />
-            <circle cx="80" cy="32" r="3" fill="rgba(196,82,10,.32)" />
-            <circle cx="220" cy="50" r="3" fill="rgba(196,82,10,.32)" />
-            <rect x="0" y="58" width="300" height="22" fill="rgba(196,82,10,.04)" />
-            <line x1="0" y1="58" x2="300" y2="58" stroke="rgba(196,82,10,.1)" stroke-width="1" />
-          </svg>
-          <div class="eco-logo-wrap">
-            <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=zoroswap.com" alt="ZoroSwap"
-              onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="eco-body">
-          <div class="eco-name">ZoroSwap</div>
-          <div class="eco-desc">Public/Private Oracle-informed AMM</div>
-        </div>
-        <div class="eco-foot">Visit project <span>→</span></div>
-      </a>
-
-      <!-- Dome -->
-      <a href="https://dome.cash/" target="_blank" rel="noopener" class="eco-card e3">
-        <div class="eco-vis" style="background: linear-gradient(135deg,#eee9df,#e5ddd0)">
-          <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
-            <circle cx="70" cy="40" r="22" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.16)" stroke-width="1.5" />
-            <circle cx="230" cy="40" r="22" fill="rgba(139,94,60,.08)" stroke="rgba(139,94,60,.16)"
-              stroke-width="1.5" />
-            <path d="M92 36 L208 36 M92 44 L208 44" stroke="rgba(196,82,10,.22)" stroke-width="1.5"
-              stroke-dasharray="5,4" />
-            <circle cx="150" cy="40" r="8" fill="rgba(196,82,10,.18)" />
-            <text x="70" y="45" text-anchor="middle" font-size="9" fill="rgba(196,82,10,.5)"
-              font-family="monospace">ETH</text>
-            <text x="230" y="45" text-anchor="middle" font-size="9" fill="rgba(139,94,60,.5)"
-              font-family="monospace">MDN</text>
-          </svg>
-          <div class="eco-logo-wrap">
-            <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=dome.cash" alt="Dome"
-              onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="eco-body">
-          <div class="eco-name">Dome</div>
-          <div class="eco-desc">Crosschain Platform for Private Transfers</div>
-        </div>
-        <div class="eco-foot">Visit project <span>→</span></div>
-      </a>
-
-      <!-- Miden Browser Wallet -->
-      <a href="https://midenbrowserwallet.com/" target="_blank" rel="noopener" class="eco-card e4">
-        <div class="eco-vis" style="background: linear-gradient(135deg,#f2ece2,#e9e1d2)">
-          <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
-            <rect x="60" y="10" width="180" height="60" rx="8" fill="rgba(196,82,10,.06)" stroke="rgba(196,82,10,.12)"
-              stroke-width="1" />
-            <rect x="60" y="10" width="180" height="18" rx="8" fill="rgba(196,82,10,.1)" />
-            <rect x="60" y="20" width="180" height="8" fill="rgba(196,82,10,.08)" />
-            <rect x="76" y="36" width="55" height="5" rx="2" fill="rgba(196,82,10,.16)" />
-            <rect x="76" y="46" width="90" height="4" rx="2" fill="rgba(196,82,10,.1)" />
-            <rect x="76" y="56" width="70" height="4" rx="2" fill="rgba(196,82,10,.07)" />
-          </svg>
-          <div class="eco-logo-wrap">
-            <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=midenbrowserwallet.com"
-              alt="Miden Wallet" onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="eco-body">
-          <div class="eco-name">Miden Wallet</div>
-          <div class="eco-desc">In-browser Wallet for Easy Payments</div>
-        </div>
-        <div class="eco-foot">Visit project <span>→</span></div>
-      </a>
-
-      <!-- Inicio Labs -->
-      <a href="https://multisig.miden.xyz/" target="_blank" rel="noopener" class="eco-card e5">
-        <div class="eco-vis" style="background: linear-gradient(135deg,#ede8de,#e3ddd0)">
-          <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
-            <circle cx="90" cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)" stroke-width="1.5" />
-            <circle cx="150" cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)"
-              stroke-width="1.5" />
-            <circle cx="210" cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)"
-              stroke-width="1.5" />
-            <path d="M83 40l6-6 4 4 8-8" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round" fill="none" />
-            <path d="M143 40l6-6 4 4 8-8" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round" fill="none" />
-            <path d="M203 40l6-6 4 4 8-8" stroke="rgba(196,82,10,.35)" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round" fill="none" stroke-dasharray="2,2" />
-          </svg>
-          <div class="eco-logo-wrap">
-            <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=multisig.miden.xyz" alt="Inicio"
-              onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="eco-body">
-          <div class="eco-name">Inicio Labs</div>
-          <div class="eco-desc">Multisig Solution for Miden</div>
-        </div>
-        <div class="eco-foot">Visit project <span>→</span></div>
-      </a>
-
-      <!-- Miden Name -->
-      <a href="https://miden.name/" target="_blank" rel="noopener" class="eco-card e6">
-        <div class="eco-vis" style="background: linear-gradient(135deg,#f0ebe0,#e7e0d2)">
-          <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
-            <rect x="45" y="24" width="210" height="32" rx="16" fill="rgba(196,82,10,.07)" stroke="rgba(196,82,10,.16)"
-              stroke-width="1" />
-            <rect x="62" y="35" width="85" height="10" rx="5" fill="rgba(196,82,10,.14)" />
-            <text x="215" y="44" text-anchor="middle" font-size="11" fill="rgba(196,82,10,.45)" font-family="monospace"
-              font-weight="600">.miden</text>
-          </svg>
-          <div class="eco-logo-wrap">
-            <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=miden.name" alt="Miden Name"
-              onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="eco-body">
-          <div class="eco-name">Miden Name</div>
-          <div class="eco-desc">Name Service for Miden</div>
-        </div>
-        <div class="eco-foot">Visit project <span>→</span></div>
-      </a>
-
-      <!-- Walnut -->
-      <a href="https://playground.miden.xyz/" target="_blank" rel="noopener" class="eco-card e7">
-        <div class="eco-vis" style="background: linear-gradient(135deg,#eae4d8,#e0d9ca)">
-          <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
-            <rect x="40" y="12" width="220" height="56" rx="6" fill="rgba(24,18,10,.06)" stroke="rgba(196,82,10,.1)"
-              stroke-width="1" />
-            <circle cx="57" cy="26" r="4" fill="rgba(196,82,10,.32)" />
-            <circle cx="70" cy="26" r="4" fill="rgba(196,82,10,.18)" />
-            <circle cx="83" cy="26" r="4" fill="rgba(196,82,10,.1)" />
-            <rect x="52" y="38" width="55" height="4" rx="2" fill="rgba(196,82,10,.22)" />
-            <rect x="52" y="48" width="95" height="4" rx="2" fill="rgba(196,82,10,.12)" />
-            <rect x="52" y="57" width="65" height="4" rx="2" fill="rgba(196,82,10,.08)" />
-            <rect x="116" y="38" width="28" height="4" rx="2" fill="rgba(139,94,60,.28)" />
-          </svg>
-          <div class="eco-logo-wrap">
-            <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=playground.miden.xyz" alt="Walnut"
-              onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="eco-body">
-          <div class="eco-name">Walnut</div>
-          <div class="eco-desc">Miden Playground & Learning Environment</div>
-        </div>
-        <div class="eco-foot">Visit project <span>→</span></div>
-      </a>
-
-      <!-- Pioneer Program -->
-      <a href="https://miden.xyz/ecosystem/program/pioneers" target="_blank" rel="noopener" class="eco-card e8">
-        <div class="eco-vis" style="background: linear-gradient(135deg,#f5f0e8,#ebe3d5)">
-          <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice">
-            <path d="M150 70 L124 44 L150 52 L176 44 Z" fill="rgba(196,82,10,.12)" stroke="rgba(196,82,10,.22)"
-              stroke-width="1.5" stroke-linejoin="round" />
-            <path d="M150 52 L132 30 L150 38 L168 30 Z" fill="rgba(196,82,10,.18)" stroke="rgba(196,82,10,.28)"
-              stroke-width="1.5" stroke-linejoin="round" />
-            <circle cx="150" cy="24" r="7" fill="rgba(196,82,10,.38)" />
-            <line x1="150" y1="14" x2="150" y2="16" stroke="rgba(196,82,10,.5)" stroke-width="1.5"
-              stroke-linecap="round" />
-          </svg>
-          <div class="eco-logo-wrap">
-            <img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=miden.xyz" alt="Miden"
-              onerror="this.style.display='none'" />
-          </div>
-        </div>
-        <div class="eco-body">
-          <div class="eco-name">Pioneer Program</div>
-          <div class="eco-desc">Apply to build with Miden's support</div>
-        </div>
-        <div class="eco-foot">Learn more <span>→</span></div>
-      </a>
-
-    </div>
-  </div>
-
-  <hr class="divider rv" />
-
-
-  <!-- ══ CTA ═══════════════════════════════════════ -->
-  <div class="wrap">
-    <div class="cta-box rv d2">
-      <div class="cta-wm">
-        <svg width="260" height="260" viewBox="0 0 100 100" fill="none">
-          <path d="M10 80V20L50 58L90 20V80" stroke="#c4520a" stroke-width="4" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </div>
-      <div class="cta-lbl">// Get Started</div>
-      <h2 class="cta-h2">Start with chapter one.</h2>
-      <p class="cta-sub">Whether you're a developer, researcher, or just curious about privacy on blockchains — this
-        handbook walks you through everything.</p>
-      <div class="cta-btns">
-        <a href="#chapters" class="btn-p">
-          Read the Handbook
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </a>
-        <a href="https://miden.xyz/testnet" class="btn-g">
-          Join Testnet
-          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-            <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </a>
-        <a href="https://miden.xyz/developers" class="btn-g">
-          Start Building
-          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-            <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ══ FOOTER ════════════════════════════════════ -->
-  <footer>
-    <div class="foot-top">
-      <div class="foot-brand">
-        <div style="display:flex;align-items:center;gap:9px">
-          <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
-            <rect width="30" height="30" rx="7" fill="#c4520a" />
-            <path d="M7 22V9L15 16.5L23 9V22" stroke="white" stroke-width="2.2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          <span style="font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-.3px">Miden Handbook</span>
-        </div>
-        <p class="foot-tag">A community guide to understanding Miden — privacy for real finance.</p>
-      </div>
-
-      <div class="foot-cols">
-        <div class="foot-col">
-          <span class="foot-col-lbl">Miden</span>
-          <a href="https://miden.xyz/" class="foot-link">Website</a>
-          <a href="https://miden.xyz/testnet" class="foot-link">Testnet</a>
-          <a href="https://miden.xyz/roadmap" class="foot-link">Roadmap</a>
-          <a href="https://miden.xyz/publications" class="foot-link">Publications</a>
-        </div>
-        <div class="foot-col">
-          <span class="foot-col-lbl">Build</span>
-          <a href="https://miden.xyz/developers" class="foot-link">Developers</a>
-          <a href="https://miden.xyz/ecosystem" class="foot-link">Ecosystem</a>
-          <a href="https://miden.xyz/ecosystem/program/pioneers" class="foot-link">Pioneer Program</a>
-          <a href="https://miden.xyz/about" class="foot-link">About</a>
-        </div>
-        <div class="foot-col">
-          <span class="foot-col-lbl">Community</span>
-          <a href="https://x.com/0xMiden" class="foot-link">Twitter / X</a>
-          <a href="https://t.me/BuildOnMiden" class="foot-link">Telegram</a>
-          <a href="https://github.com/0xMiden" class="foot-link">GitHub</a>
-          <a href="mailto:contact@miden.team" class="foot-link">Contact</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="foot-btm">
-      <span class="foot-copy">© 2025 Miden Handbook. Community resource — not official Miden documentation.</span>
-      <div class="socials">
-        <a href="https://x.com/0xMiden" class="soc" title="Twitter/X">𝕏</a>
-        <a href="https://t.me/BuildOnMiden" class="soc" title="Telegram">✈</a>
-        <a href="https://github.com/0xMiden" class="soc" title="GitHub">⌥</a>
-      </div>
-      <span class="foot-credit">Developed by <a href="#">Zeltrax</a></span>
-    </div>
-  </footer>
-
-
-  <script>
-    // Unified IntersectionObserver — reveals .rv, .team-card, .eco-card
-    const io = new IntersectionObserver(
-      entries => entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      }),
-      { threshold: 0.07, rootMargin: '0px 0px -24px 0px' }
-    );
-    document.querySelectorAll('.rv, .team-card, .eco-card').forEach(el => io.observe(el));
-
-    // Handle broken team images - hide them to show gradient background
-    document.querySelectorAll('.t-avatar img').forEach(img => {
-      img.addEventListener('error', function () {
-        this.style.display = 'none';
-      });
-
-      // Check if image is already broken on load
-      if (img.complete && img.naturalHeight === 0) {
-        img.style.display = 'none';
-      }
-    });
-  </script>
-
-</body>
-
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Unified IntersectionObserver — reveals .rv, .team-card, .eco-card
+  const io = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }),
+    { threshold: 0.07, rootMargi
