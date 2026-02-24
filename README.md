@@ -42,4 +42,4 @@ midenhandbook/
 
 ---
 
-Developed by Zeltrax
+Developed by DamilareofWeb3
