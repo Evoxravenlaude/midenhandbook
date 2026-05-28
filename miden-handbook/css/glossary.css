@@ -1,0 +1,133 @@
+/* ════════════════════════════════════════════
+   MIDEN HANDBOOK — glossary.css
+   Collapsible glossary with toggle animation
+═══════════════════════════════════════════ */
+
+/* ── WRAPPER ─────────────────────────────── */
+#glossary { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 44px 80px; }
+
+/* ── HEADER ROW ──────────────────────────── */
+.glossary-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px; margin-bottom: 32px;
+}
+.glossary-header-left { flex: 1; min-width: 200px; }
+
+/* ── TOGGLE BUTTON ───────────────────────── */
+.glossary-toggle-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; border-radius: 100px;
+  border: 1px solid var(--border-mid); background: var(--bg);
+  color: var(--t2); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all .22s;
+  font-family: 'Geist', sans-serif;
+  -webkit-appearance: none; appearance: none;
+  white-space: nowrap;
+}
+.glossary-toggle-btn:hover { border-color: var(--border-hover); color: var(--orange); background: var(--op); }
+.glossary-toggle-btn.open { background: var(--op); border-color: rgba(196,82,10,.25); color: var(--orange); }
+.glt-icon {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--ob));
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 10px; color: #fff;
+  transition: transform .3s cubic-bezier(.16,1,.3,1);
+}
+.glossary-toggle-btn.open .glt-icon { transform: rotate(180deg); }
+.glt-count {
+  font-family: 'Geist Mono', monospace; font-size: 10px;
+  padding: 2px 7px; border-radius: 10px; background: var(--bg-raised);
+  border: 1px solid var(--border); color: var(--t3);
+}
+
+/* ── COLLAPSIBLE BODY ────────────────────── */
+.glossary-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .5s cubic-bezier(.16,1,.3,1);
+  overflow: hidden;
+}
+.glossary-body.open { grid-template-rows: 1fr; }
+.glossary-body-inner { overflow: hidden; }
+
+/* ── PREVIEW (when collapsed) ────────────── */
+.glossary-preview {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 20px 0 4px;
+  max-height: none;
+}
+.glossary-preview-chip {
+  padding: 5px 14px; border-radius: 20px;
+  border: 1px solid var(--border); background: var(--bg-raised);
+  font-size: 12px; color: var(--t2);
+  font-family: 'Geist Mono', monospace;
+  cursor: pointer; transition: all .18s;
+  -webkit-appearance: none; appearance: none;
+}
+.glossary-preview-chip:hover { border-color: var(--border-hover); color: var(--orange); background: var(--op); }
+.glossary-preview-more {
+  padding: 5px 14px; border-radius: 20px;
+  border: 1px dashed var(--border-mid); background: transparent;
+  font-size: 12px; color: var(--t3);
+  font-family: 'Geist Mono', monospace;
+  cursor: pointer; transition: all .18s;
+  -webkit-appearance: none; appearance: none;
+}
+.glossary-preview-more:hover { border-color: var(--orange); color: var(--orange); }
+
+/* ── CONTROLS ────────────────────────────── */
+.glossary-controls {
+  margin-bottom: 24px;
+  display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+  padding-top: 24px;
+}
+#glossary-search {
+  flex: 1; min-width: 220px; padding: 12px 18px;
+  border: 1px solid var(--border); border-radius: 10px;
+  font-family: 'Geist', sans-serif; font-size: 14px;
+  background: var(--bg); color: var(--ink); outline: none;
+  transition: border .2s; -webkit-appearance: none; appearance: none;
+}
+#glossary-search:focus { border-color: var(--orange); }
+#glossary-filter {
+  padding: 12px 18px; border: 1px solid var(--border); border-radius: 10px;
+  font-family: 'Geist', sans-serif; font-size: 14px;
+  background: var(--bg); color: var(--ink); cursor: pointer; outline: none;
+  -webkit-appearance: none; appearance: none;
+}
+#glossary-filter:focus { border-color: var(--orange); }
+#results-count { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--t3); padding: 12px 18px; }
+
+/* ── TERM GRID ───────────────────────────── */
+#glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+  padding-bottom: 8px;
+}
+.glossary-card {
+  padding: 18px 22px; border: 1px solid var(--border);
+  border-radius: 12px; background: var(--bg);
+  transition: all .25s; cursor: pointer;
+  animation: cardIn .35s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes cardIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.glossary-card:hover { border-color: var(--border-hover); box-shadow: 0 6px 20px rgba(196,82,10,.08); transform: translateY(-2px); }
+.glossary-card .gc-word { font-size: 15px; font-weight: 600; color: var(--ink); letter-spacing: -.3px; flex: 1; }
+.glossary-card .gc-tag { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(196,82,10,.2); background: var(--op); flex-shrink: 0; }
+.glossary-card .gc-def { font-size: 13px; line-height: 1.6; color: var(--t2); margin-top: 8px; }
+
+#no-results { display: none; text-align: center; padding: 60px 20px; color: var(--t3); }
+#no-results p:first-child { font-size: 18px; margin-bottom: 10px; font-weight: 600; }
+#no-results p:last-child { font-size: 14px; }
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 960px) {
+  #glossary { padding-left: 20px; padding-right: 20px; }
+  #glossary-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+}
+@media (max-width: 560px) {
+  #glossary-grid { grid-template-columns: 1fr; }
+  .glossary-controls { flex-direction: column; }
+  #glossary-search, #glossary-filter { width: 100%; }
+}

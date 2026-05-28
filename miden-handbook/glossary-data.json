@@ -1,0 +1,1154 @@
+{
+  "terms": [
+    {
+      "word": "Miden",
+      "category": "miden",
+      "def": "A programmable privacy network built on zero-knowledge proofs, designed for the next generation of compliant finance. Enables private transactions while maintaining regulatory compliance through selective disclosure."
+    },
+    {
+      "word": "Miden VM",
+      "category": "miden",
+      "def": "The Miden Virtual Machine \u2014 a zero-knowledge virtual machine that enables private, verifiable computation. Built on STARK proofs, it allows users to execute programs locally and prove their execution without revealing inputs."
+    },
+    {
+      "word": "Edge Blockchain",
+      "category": "miden",
+      "def": "A blockchain architecture pioneered by Miden where computation and state changes happen on the client side (the 'edge'), rather than on a shared network. Transactions are executed locally and proven with ZK proofs."
+    },
+    {
+      "word": "Winterfell",
+      "category": "miden",
+      "def": "An open-source STARK prover library created by Bobbin Threadbare, one of the fastest STARK implementations. The proving engine that powers Miden VM."
+    },
+    {
+      "word": "Account Model",
+      "category": "miden",
+      "def": "Miden's approach to managing user state. Accounts can hold complex state and execute arbitrary programs, enabling smart contract-like functionality with privacy."
+    },
+    {
+      "word": "Note Model",
+      "category": "miden",
+      "def": "Miden's transaction approach. Notes are private messages between accounts containing assets and execution scripts, enabling asynchronous private transactions."
+    },
+    {
+      "word": "Client-Side Proving",
+      "category": "miden",
+      "def": "Miden's approach where users execute transactions and generate proofs on their own devices rather than on a shared network, enabling privacy and scalability."
+    },
+    {
+      "word": "MAST",
+      "category": "miden",
+      "def": "Merkelized Abstract Syntax Tree used in Miden for efficient code representation and verification."
+    },
+    {
+      "word": "Polygon Miden",
+      "category": "miden",
+      "def": "The official name of the Miden protocol when it was part of the Polygon ecosystem, now independently developed."
+    },
+    {
+      "word": "Miden Assembly",
+      "category": "miden",
+      "def": "The low-level programming language for the Miden VM, designed for writing efficient zero-knowledge programs."
+    },
+    {
+      "word": "Zero-Knowledge Proof",
+      "category": "zk",
+      "def": "A cryptographic method where one party can prove to another that a statement is true, without revealing any information beyond the validity of the statement itself."
+    },
+    {
+      "word": "STARK",
+      "category": "zk",
+      "def": "Scalable Transparent ARgument of Knowledge. A type of zero-knowledge proof that is quantum-resistant, requires no trusted setup, and scales well for large computations."
+    },
+    {
+      "word": "SNARK",
+      "category": "zk",
+      "def": "Succinct Non-interactive ARgument of Knowledge. Produces very small proofs but most require a trusted setup and aren't quantum-resistant."
+    },
+    {
+      "word": "Prover",
+      "category": "zk",
+      "def": "In zero-knowledge systems, the party that generates a proof to demonstrate knowledge or correctness of a computation without revealing underlying data."
+    },
+    {
+      "word": "Verifier",
+      "category": "zk",
+      "def": "In zero-knowledge systems, the party that checks a proof to determine if a statement is true. Verification is typically much faster than proof generation."
+    },
+    {
+      "word": "Recursive Proof",
+      "category": "zk",
+      "def": "A zero-knowledge proof that verifies another zero-knowledge proof, allowing complex computations to be broken down into smaller combined proofs."
+    },
+    {
+      "word": "Circuit",
+      "category": "zk",
+      "def": "A mathematical representation of a computation that can be proven and verified. Programs are compiled into circuits that define computational constraints."
+    },
+    {
+      "word": "Trusted Setup",
+      "category": "zk",
+      "def": "A one-time ceremony required by some ZK systems to generate initial parameters. If compromised, system security fails. STARKs don't require this."
+    },
+    {
+      "word": "Witness",
+      "category": "zk",
+      "def": "The private input to a zero-knowledge proof that the prover knows but doesn't reveal to the verifier."
+    },
+    {
+      "word": "Commitment Scheme",
+      "category": "zk",
+      "def": "A cryptographic primitive allowing one to commit to a value while keeping it hidden, with the ability to reveal it later."
+    },
+    {
+      "word": "FRI",
+      "category": "zk",
+      "def": "Fast Reed-Solomon Interactive Oracle Proof of Proximity, the core protocol underlying STARK proofs."
+    },
+    {
+      "word": "Plonk",
+      "category": "zk",
+      "def": "A popular SNARK proving system that allows for universal and updateable trusted setups."
+    },
+    {
+      "word": "Groth16",
+      "category": "zk",
+      "def": "A widely-used SNARK construction known for producing very small proofs and fast verification."
+    },
+    {
+      "word": "zk-SNARK",
+      "category": "zk",
+      "def": "Zero-Knowledge Succinct Non-Interactive Argument of Knowledge, the full term for SNARK systems."
+    },
+    {
+      "word": "zk-STARK",
+      "category": "zk",
+      "def": "Zero-Knowledge Scalable Transparent Argument of Knowledge, the full term for STARK systems."
+    },
+    {
+      "word": "Bulletproofs",
+      "category": "zk",
+      "def": "Short non-interactive zero-knowledge proofs that don't require a trusted setup, used for range proofs."
+    },
+    {
+      "word": "Range Proof",
+      "category": "zk",
+      "def": "A zero-knowledge proof that a value lies within a specific range without revealing the exact value."
+    },
+    {
+      "word": "Soundness",
+      "category": "zk",
+      "def": "The property that a proof system cannot convince a verifier of a false statement except with negligible probability."
+    },
+    {
+      "word": "Completeness",
+      "category": "zk",
+      "def": "The property that an honest prover can always convince a verifier of a true statement."
+    },
+    {
+      "word": "Zero-Knowledge Property",
+      "category": "zk",
+      "def": "The property that a proof reveals nothing beyond the truth of the statement being proven."
+    },
+    {
+      "word": "Blockchain",
+      "category": "blockchain",
+      "def": "A distributed ledger where transactions are recorded in cryptographically linked blocks. Each block contains a hash of the previous block, creating an immutable chain."
+    },
+    {
+      "word": "Consensus",
+      "category": "blockchain",
+      "def": "The mechanism by which nodes in a distributed network agree on the ledger state. Common mechanisms include PoW, PoS, and BFT."
+    },
+    {
+      "word": "Smart Contract",
+      "category": "blockchain",
+      "def": "Self-executing programs on a blockchain that automatically enforce agreements when predetermined conditions are met."
+    },
+    {
+      "word": "Gas",
+      "category": "blockchain",
+      "def": "A measure of computational effort required to execute operations. Users pay gas fees to compensate network operators."
+    },
+    {
+      "word": "Rollup",
+      "category": "blockchain",
+      "def": "A layer-2 scaling solution that executes transactions off-chain and posts compressed data to the main chain."
+    },
+    {
+      "word": "Layer 1",
+      "category": "blockchain",
+      "def": "The base layer of a blockchain network where primary consensus and validation occurs. Examples: Ethereum, Bitcoin, Solana."
+    },
+    {
+      "word": "Layer 2",
+      "category": "blockchain",
+      "def": "Scaling solutions built on top of L1 blockchains. Process transactions off-chain while inheriting L1 security."
+    },
+    {
+      "word": "DApp",
+      "category": "blockchain",
+      "def": "Decentralized Application that runs on a blockchain or peer-to-peer network rather than centralized servers."
+    },
+    {
+      "word": "EVM",
+      "category": "blockchain",
+      "def": "Ethereum Virtual Machine, the runtime environment for smart contracts on Ethereum and EVM-compatible chains."
+    },
+    {
+      "word": "Wallet",
+      "category": "blockchain",
+      "def": "Software or hardware storing private keys, enabling blockchain interaction, transaction signing, and account management."
+    },
+    {
+      "word": "Testnet",
+      "category": "blockchain",
+      "def": "A separate blockchain network for testing and development. Testnet tokens have no real value."
+    },
+    {
+      "word": "Mainnet",
+      "category": "blockchain",
+      "def": "The live production blockchain where real transactions with actual value occur."
+    },
+    {
+      "word": "Oracle",
+      "category": "blockchain",
+      "def": "A service providing external data to smart contracts, bridging blockchains and the real world."
+    },
+    {
+      "word": "AMM",
+      "category": "blockchain",
+      "def": "Automated Market Maker using liquidity pools and mathematical formulas to price assets instead of order books."
+    },
+    {
+      "word": "Liquidity Pool",
+      "category": "blockchain",
+      "def": "Funds locked in a smart contract enabling trading on decentralized exchanges. Providers earn fees from trades."
+    },
+    {
+      "word": "Multisig",
+      "category": "blockchain",
+      "def": "Multi-signature wallet requiring multiple private keys to authorize transactions, preventing single points of failure."
+    },
+    {
+      "word": "Bridge",
+      "category": "blockchain",
+      "def": "Protocol connecting different blockchains, enabling asset transfers and cross-chain communication."
+    },
+    {
+      "word": "Fork",
+      "category": "blockchain",
+      "def": "A divergence in the blockchain where the protocol changes, creating two separate chains from a common history."
+    },
+    {
+      "word": "Hard Fork",
+      "category": "blockchain",
+      "def": "A protocol change incompatible with previous versions, requiring all nodes to upgrade."
+    },
+    {
+      "word": "Soft Fork",
+      "category": "blockchain",
+      "def": "A backward-compatible protocol change where old nodes can still validate new blocks."
+    },
+    {
+      "word": "Block Height",
+      "category": "blockchain",
+      "def": "The number of blocks in the chain between any given block and the genesis block."
+    },
+    {
+      "word": "Block Time",
+      "category": "blockchain",
+      "def": "The average time it takes to mine or produce a new block on the blockchain."
+    },
+    {
+      "word": "Finality",
+      "category": "blockchain",
+      "def": "The point at which a transaction is considered irreversible and permanently recorded."
+    },
+    {
+      "word": "Mempool",
+      "category": "blockchain",
+      "def": "The pool of unconfirmed transactions waiting to be included in the next block."
+    },
+    {
+      "word": "Nonce",
+      "category": "blockchain",
+      "def": "A number used once in cryptographic communication, often to prevent replay attacks or as a counter."
+    },
+    {
+      "word": "Genesis Block",
+      "category": "blockchain",
+      "def": "The first block in a blockchain, hardcoded into the network software."
+    },
+    {
+      "word": "Block Explorer",
+      "category": "blockchain",
+      "def": "A web tool for searching and viewing blockchain data including transactions, blocks, and addresses."
+    },
+    {
+      "word": "Transaction ID",
+      "category": "blockchain",
+      "def": "A unique identifier (hash) for a blockchain transaction, used to track and verify it."
+    },
+    {
+      "word": "State",
+      "category": "blockchain",
+      "def": "The current data set of all accounts, balances, and contract storage on a blockchain."
+    },
+    {
+      "word": "State Transition",
+      "category": "blockchain",
+      "def": "The process of moving from one blockchain state to another through transaction execution."
+    },
+    {
+      "word": "Sidechain",
+      "category": "blockchain",
+      "def": "A separate blockchain connected to a main chain, allowing assets to move between them."
+    },
+    {
+      "word": "Plasma",
+      "category": "blockchain",
+      "def": "A framework for building scalable applications through child chains anchored to a main blockchain."
+    },
+    {
+      "word": "State Channel",
+      "category": "blockchain",
+      "def": "Off-chain communication between participants, only settling final state on-chain for scalability."
+    },
+    {
+      "word": "Optimistic Rollup",
+      "category": "blockchain",
+      "def": "A rollup that assumes transactions are valid by default, using fraud proofs to challenge invalid ones."
+    },
+    {
+      "word": "ZK-Rollup",
+      "category": "blockchain",
+      "def": "A rollup using zero-knowledge proofs to verify transaction validity, offering stronger security guarantees."
+    },
+    {
+      "word": "Validium",
+      "category": "blockchain",
+      "def": "A scaling solution using ZK proofs for computation validity while storing data off-chain."
+    },
+    {
+      "word": "Volition",
+      "category": "blockchain",
+      "def": "A hybrid system allowing users to choose between on-chain and off-chain data availability."
+    },
+    {
+      "word": "Privacy",
+      "category": "privacy",
+      "def": "The ability to transact or hold assets without revealing identifying information, amounts, or balances to unauthorized parties."
+    },
+    {
+      "word": "Selective Disclosure",
+      "category": "privacy",
+      "def": "Revealing specific information to authorized parties while keeping other details private, critical for compliant privacy."
+    },
+    {
+      "word": "Programmable Privacy",
+      "category": "privacy",
+      "def": "Miden's core feature allowing developers to define custom privacy rules for their applications."
+    },
+    {
+      "word": "Compliance",
+      "category": "privacy",
+      "def": "Adherence to regulatory requirements, often involving KYC/AML and selective disclosure mechanisms."
+    },
+    {
+      "word": "Dark Pool",
+      "category": "privacy",
+      "def": "A private exchange for trading large volumes without revealing orders to public markets."
+    },
+    {
+      "word": "Confidential Transaction",
+      "category": "privacy",
+      "def": "A transaction where amounts are hidden using cryptographic techniques while still being verifiable."
+    },
+    {
+      "word": "Ring Signature",
+      "category": "privacy",
+      "def": "A cryptographic signature scheme providing anonymity by hiding the actual signer among a group."
+    },
+    {
+      "word": "Stealth Address",
+      "category": "privacy",
+      "def": "A one-time address generated for each transaction to prevent linking transactions to a recipient."
+    },
+    {
+      "word": "Mixing",
+      "category": "privacy",
+      "def": "Combining multiple transactions to obscure the relationship between senders and recipients."
+    },
+    {
+      "word": "Tumbler",
+      "category": "privacy",
+      "def": "A service that mixes cryptocurrency from multiple sources to break transaction trails."
+    },
+    {
+      "word": "CoinJoin",
+      "category": "privacy",
+      "def": "A privacy technique where multiple users combine their transactions into one to obscure ownership."
+    },
+    {
+      "word": "zk-SNARK Privacy",
+      "category": "privacy",
+      "def": "Using zero-knowledge SNARKs to enable private transactions with cryptographic proof of validity."
+    },
+    {
+      "word": "Homomorphic Encryption",
+      "category": "privacy",
+      "def": "Encryption allowing computations on encrypted data without decrypting it first."
+    },
+    {
+      "word": "Differential Privacy",
+      "category": "privacy",
+      "def": "A privacy framework that adds noise to data to protect individual privacy while maintaining statistical accuracy."
+    },
+    {
+      "word": "KYC",
+      "category": "privacy",
+      "def": "Know Your Customer - identity verification processes required by regulations to prevent fraud and money laundering."
+    },
+    {
+      "word": "AML",
+      "category": "privacy",
+      "def": "Anti-Money Laundering - regulations and procedures to detect and prevent money laundering activities."
+    },
+    {
+      "word": "Encryption",
+      "category": "crypto",
+      "def": "Encoding information so only authorized parties can access it, protecting private keys and transaction data."
+    },
+    {
+      "word": "Hash Function",
+      "category": "crypto",
+      "def": "A mathematical function converting any input into a fixed-size output. Cryptographic hashes are one-way and collision-resistant."
+    },
+    {
+      "word": "Public Key",
+      "category": "crypto",
+      "def": "The publicly shareable part of a key pair, used to verify signatures or encrypt data."
+    },
+    {
+      "word": "Private Key",
+      "category": "crypto",
+      "def": "The secret part of a key pair used to sign transactions and prove ownership. Must be kept confidential."
+    },
+    {
+      "word": "Digital Signature",
+      "category": "crypto",
+      "def": "A cryptographic mechanism proving a message was created by the holder of a specific private key."
+    },
+    {
+      "word": "Merkle Tree",
+      "category": "crypto",
+      "def": "A tree where each leaf is a data hash and each non-leaf is a hash of its children. Efficiently verifies data integrity."
+    },
+    {
+      "word": "Quantum Resistance",
+      "category": "crypto",
+      "def": "Security against quantum computer attacks. Miden uses post-quantum cryptography (STARKs) for future-proofing."
+    },
+    {
+      "word": "Asymmetric Encryption",
+      "category": "crypto",
+      "def": "Encryption using a public-private key pair, where one key encrypts and the other decrypts."
+    },
+    {
+      "word": "Symmetric Encryption",
+      "category": "crypto",
+      "def": "Encryption where the same key is used for both encryption and decryption."
+    },
+    {
+      "word": "Elliptic Curve Cryptography",
+      "category": "crypto",
+      "def": "Public key cryptography based on elliptic curves, offering strong security with smaller key sizes."
+    },
+    {
+      "word": "SHA-256",
+      "category": "crypto",
+      "def": "Secure Hash Algorithm producing 256-bit hashes, widely used in blockchain (Bitcoin, Ethereum)."
+    },
+    {
+      "word": "Keccak",
+      "category": "crypto",
+      "def": "The cryptographic hash function underlying SHA-3 and used in Ethereum."
+    },
+    {
+      "word": "ECDSA",
+      "category": "crypto",
+      "def": "Elliptic Curve Digital Signature Algorithm used for signing transactions in many blockchains."
+    },
+    {
+      "word": "EdDSA",
+      "category": "crypto",
+      "def": "Edwards-curve Digital Signature Algorithm, a modern signature scheme offering better performance."
+    },
+    {
+      "word": "Schnorr Signature",
+      "category": "crypto",
+      "def": "A signature scheme enabling signature aggregation and multisignatures efficiently."
+    },
+    {
+      "word": "BLS Signature",
+      "category": "crypto",
+      "def": "Boneh-Lynn-Shacham signature scheme allowing efficient signature aggregation."
+    },
+    {
+      "word": "Threshold Cryptography",
+      "category": "crypto",
+      "def": "Cryptographic operations requiring cooperation of multiple parties to prevent single points of failure."
+    },
+    {
+      "word": "Multi-Party Computation",
+      "category": "crypto",
+      "def": "Protocols allowing parties to jointly compute a function while keeping inputs private."
+    },
+    {
+      "word": "Secret Sharing",
+      "category": "crypto",
+      "def": "Dividing a secret into shares where a threshold number is needed to reconstruct it."
+    },
+    {
+      "word": "Salt",
+      "category": "crypto",
+      "def": "Random data added to inputs before hashing to prevent dictionary attacks."
+    },
+    {
+      "word": "HMAC",
+      "category": "crypto",
+      "def": "Hash-based Message Authentication Code, combining a hash function with a secret key."
+    },
+    {
+      "word": "Key Derivation Function",
+      "category": "crypto",
+      "def": "A function deriving one or more secret keys from a master secret."
+    },
+    {
+      "word": "Seed Phrase",
+      "category": "crypto",
+      "def": "A list of words encoding wallet private keys, allowing backup and recovery."
+    },
+    {
+      "word": "HD Wallet",
+      "category": "crypto",
+      "def": "Hierarchical Deterministic wallet generating addresses from a single seed phrase."
+    },
+    {
+      "word": "BIP-39",
+      "category": "crypto",
+      "def": "Bitcoin Improvement Proposal defining the standard for mnemonic seed phrases."
+    },
+    {
+      "word": "DeFi",
+      "category": "blockchain",
+      "def": "Decentralized Finance - financial applications built on blockchain without traditional intermediaries."
+    },
+    {
+      "word": "DEX",
+      "category": "blockchain",
+      "def": "Decentralized Exchange - a platform for trading cryptocurrencies without a central authority."
+    },
+    {
+      "word": "Yield Farming",
+      "category": "blockchain",
+      "def": "Providing liquidity to DeFi protocols to earn returns in the form of fees and tokens."
+    },
+    {
+      "word": "Staking",
+      "category": "blockchain",
+      "def": "Locking tokens to support network operations (like validation) in exchange for rewards."
+    },
+    {
+      "word": "Slashing",
+      "category": "blockchain",
+      "def": "Penalty mechanism where staked tokens are destroyed for malicious or incorrect validator behavior."
+    },
+    {
+      "word": "Validator",
+      "category": "blockchain",
+      "def": "A network participant who validates and adds new blocks to the blockchain in PoS systems."
+    },
+    {
+      "word": "Delegator",
+      "category": "blockchain",
+      "def": "A token holder who delegates their stake to a validator in PoS networks."
+    },
+    {
+      "word": "Proof of Work",
+      "category": "blockchain",
+      "def": "A consensus mechanism requiring computational work to validate transactions and create blocks."
+    },
+    {
+      "word": "Proof of Stake",
+      "category": "blockchain",
+      "def": "A consensus mechanism where validators are chosen based on their stake in the network."
+    },
+    {
+      "word": "Mining",
+      "category": "blockchain",
+      "def": "The process of validating transactions and creating new blocks in PoW blockchains."
+    },
+    {
+      "word": "Miner",
+      "category": "blockchain",
+      "def": "A participant who performs mining in PoW networks, competing to solve cryptographic puzzles."
+    },
+    {
+      "word": "Hash Rate",
+      "category": "blockchain",
+      "def": "The computational power used for mining, measured in hashes per second."
+    },
+    {
+      "word": "Difficulty",
+      "category": "blockchain",
+      "def": "A measure of how hard it is to mine a new block, adjusting to maintain consistent block times."
+    },
+    {
+      "word": "Block Reward",
+      "category": "blockchain",
+      "def": "The cryptocurrency given to miners or validators for successfully creating a new block."
+    },
+    {
+      "word": "Halving",
+      "category": "blockchain",
+      "def": "Periodic reduction in block rewards (Bitcoin), occurring approximately every 4 years."
+    },
+    {
+      "word": "Token",
+      "category": "blockchain",
+      "def": "A digital asset created on an existing blockchain, representing value or utility."
+    },
+    {
+      "word": "Coin",
+      "category": "blockchain",
+      "def": "A cryptocurrency native to its own blockchain (Bitcoin, Ether, etc.)."
+    },
+    {
+      "word": "Altcoin",
+      "category": "blockchain",
+      "def": "Any cryptocurrency other than Bitcoin."
+    },
+    {
+      "word": "Stablecoin",
+      "category": "blockchain",
+      "def": "A cryptocurrency designed to maintain a stable value, usually pegged to fiat currency."
+    },
+    {
+      "word": "Governance Token",
+      "category": "blockchain",
+      "def": "A token granting holders voting rights on protocol decisions and upgrades."
+    },
+    {
+      "word": "Utility Token",
+      "category": "blockchain",
+      "def": "A token providing access to a product or service within a blockchain ecosystem."
+    },
+    {
+      "word": "NFT",
+      "category": "blockchain",
+      "def": "Non-Fungible Token - a unique digital asset representing ownership of specific items or content."
+    },
+    {
+      "word": "ERC-20",
+      "category": "blockchain",
+      "def": "The Ethereum standard for fungible tokens, defining a common interface."
+    },
+    {
+      "word": "ERC-721",
+      "category": "blockchain",
+      "def": "The Ethereum standard for non-fungible tokens (NFTs)."
+    },
+    {
+      "word": "ERC-1155",
+      "category": "blockchain",
+      "def": "An Ethereum standard supporting both fungible and non-fungible tokens in one contract."
+    },
+    {
+      "word": "Gas Limit",
+      "category": "blockchain",
+      "def": "The maximum amount of gas a user is willing to spend on a transaction."
+    },
+    {
+      "word": "Gas Price",
+      "category": "blockchain",
+      "def": "The amount a user pays per unit of gas, determining transaction priority."
+    },
+    {
+      "word": "Gwei",
+      "category": "blockchain",
+      "def": "A denomination of ETH equal to 0.000000001 ETH, commonly used for gas prices."
+    },
+    {
+      "word": "Wei",
+      "category": "blockchain",
+      "def": "The smallest denomination of ETH, equal to 0.000000000000000001 ETH."
+    },
+    {
+      "word": "Satoshi",
+      "category": "blockchain",
+      "def": "The smallest unit of Bitcoin, equal to 0.00000001 BTC."
+    },
+    {
+      "word": "UTXO",
+      "category": "blockchain",
+      "def": "Unspent Transaction Output - the accounting model used by Bitcoin and similar blockchains."
+    },
+    {
+      "word": "Account Model",
+      "category": "blockchain",
+      "def": "An accounting model tracking balances directly, used by Ethereum and Miden."
+    },
+    {
+      "word": "Transaction Fee",
+      "category": "blockchain",
+      "def": "The cost paid to process a transaction on a blockchain, compensating validators."
+    },
+    {
+      "word": "MEV",
+      "category": "blockchain",
+      "def": "Maximal Extractable Value - profit extracted by reordering, including, or censoring transactions."
+    },
+    {
+      "word": "Flashbots",
+      "category": "blockchain",
+      "def": "Infrastructure to mitigate MEV negative effects and democratize extraction."
+    },
+    {
+      "word": "Frontrunning",
+      "category": "blockchain",
+      "def": "Placing a transaction ahead of another to profit from price movements it will cause."
+    },
+    {
+      "word": "Sandwich Attack",
+      "category": "blockchain",
+      "def": "An MEV attack placing transactions before and after a target transaction to extract value."
+    },
+    {
+      "word": "DAO",
+      "category": "blockchain",
+      "def": "Decentralized Autonomous Organization - an organization governed by smart contracts and token holders."
+    },
+    {
+      "word": "Governance",
+      "category": "blockchain",
+      "def": "The process by which protocol decisions and upgrades are made, often through token voting."
+    },
+    {
+      "word": "Proposal",
+      "category": "blockchain",
+      "def": "A suggested change to a protocol submitted for community voting in governance systems."
+    },
+    {
+      "word": "Snapshot",
+      "category": "blockchain",
+      "def": "A tool for off-chain governance voting using token balances at a specific block."
+    },
+    {
+      "word": "Timelock",
+      "category": "blockchain",
+      "def": "A mechanism delaying execution of approved proposals to allow for community review."
+    },
+    {
+      "word": "Multisig Wallet",
+      "category": "blockchain",
+      "def": "A wallet requiring multiple signatures to execute transactions, enhancing security."
+    },
+    {
+      "word": "Cold Wallet",
+      "category": "blockchain",
+      "def": "A cryptocurrency wallet not connected to the internet, offering maximum security."
+    },
+    {
+      "word": "Hot Wallet",
+      "category": "blockchain",
+      "def": "A cryptocurrency wallet connected to the internet, offering convenience over security."
+    },
+    {
+      "word": "Hardware Wallet",
+      "category": "blockchain",
+      "def": "A physical device storing private keys offline, combining security with usability."
+    },
+    {
+      "word": "Paper Wallet",
+      "category": "blockchain",
+      "def": "A physical document containing a public address and private key, completely offline."
+    },
+    {
+      "word": "Custodial Wallet",
+      "category": "blockchain",
+      "def": "A wallet where a third party (exchange, service) controls the private keys."
+    },
+    {
+      "word": "Non-Custodial Wallet",
+      "category": "blockchain",
+      "def": "A wallet where the user maintains full control of their private keys."
+    },
+    {
+      "word": "Interoperability",
+      "category": "blockchain",
+      "def": "The ability of different blockchain networks to communicate and share data."
+    },
+    {
+      "word": "Cross-Chain",
+      "category": "blockchain",
+      "def": "Interactions or transactions occurring across different blockchain networks."
+    },
+    {
+      "word": "Atomic Swap",
+      "category": "blockchain",
+      "def": "A peer-to-peer exchange of cryptocurrencies across different blockchains without intermediaries."
+    },
+    {
+      "word": "Wrapped Token",
+      "category": "blockchain",
+      "def": "A token representing an asset from another blockchain (e.g., WBTC represents Bitcoin on Ethereum)."
+    },
+    {
+      "word": "Pegging",
+      "category": "blockchain",
+      "def": "Maintaining a token's value relative to another asset, usually through collateralization."
+    },
+    {
+      "word": "Oracle Problem",
+      "category": "blockchain",
+      "def": "The challenge of securely bringing external data onto a blockchain."
+    },
+    {
+      "word": "Chainlink",
+      "category": "blockchain",
+      "def": "A decentralized oracle network providing external data to smart contracts."
+    },
+    {
+      "word": "Flash Loan",
+      "category": "blockchain",
+      "def": "An uncollateralized loan that must be borrowed and repaid within a single transaction."
+    },
+    {
+      "word": "Impermanent Loss",
+      "category": "blockchain",
+      "def": "Temporary loss experienced by liquidity providers when token price ratios change."
+    },
+    {
+      "word": "Total Value Locked",
+      "category": "blockchain",
+      "def": "The total amount of assets deposited in a DeFi protocol, measuring its size."
+    },
+    {
+      "word": "Annual Percentage Yield",
+      "category": "blockchain",
+      "def": "The real rate of return earned on an investment, accounting for compound interest."
+    },
+    {
+      "word": "Slippage",
+      "category": "blockchain",
+      "def": "The difference between expected and actual transaction prices due to market movement."
+    },
+    {
+      "word": "Price Impact",
+      "category": "blockchain",
+      "def": "How much a trade affects the market price, higher for larger trades in smaller pools."
+    },
+    {
+      "word": "Bonding Curve",
+      "category": "blockchain",
+      "def": "A mathematical curve determining token price based on supply in automated market making."
+    },
+    {
+      "word": "Liquidity Mining",
+      "category": "blockchain",
+      "def": "Earning tokens by providing liquidity to a protocol, incentivizing participation."
+    },
+    {
+      "word": "Airdrop",
+      "category": "blockchain",
+      "def": "Free distribution of tokens to wallet addresses, often for marketing or governance."
+    },
+    {
+      "word": "Whitelist",
+      "category": "blockchain",
+      "def": "A list of approved addresses with special access or privileges in token sales or features."
+    },
+    {
+      "word": "Vesting",
+      "category": "blockchain",
+      "def": "A schedule controlling when tokens become available, preventing immediate selling."
+    },
+    {
+      "word": "Cliff",
+      "category": "blockchain",
+      "def": "A period during vesting where no tokens are released, followed by a partial or full unlock."
+    },
+    {
+      "word": "Token Economics",
+      "category": "blockchain",
+      "def": "The design of a token's supply, distribution, and incentive mechanisms."
+    },
+    {
+      "word": "Burning",
+      "category": "blockchain",
+      "def": "Permanently removing tokens from circulation to increase scarcity and value."
+    },
+    {
+      "word": "Minting",
+      "category": "blockchain",
+      "def": "Creating new tokens, either as part of block rewards or token supply expansion."
+    },
+    {
+      "word": "Max Supply",
+      "category": "blockchain",
+      "def": "The maximum number of tokens that will ever exist for a cryptocurrency."
+    },
+    {
+      "word": "Circulating Supply",
+      "category": "blockchain",
+      "def": "The number of tokens currently available and trading in the market."
+    },
+    {
+      "word": "Market Cap",
+      "category": "blockchain",
+      "def": "Total value of a cryptocurrency, calculated as price multiplied by circulating supply."
+    },
+    {
+      "word": "Fully Diluted Valuation",
+      "category": "blockchain",
+      "def": "Market value if all tokens were in circulation, price times max supply."
+    },
+    {
+      "word": "Liquidity",
+      "category": "blockchain",
+      "def": "How easily an asset can be bought or sold without significantly affecting its price."
+    },
+    {
+      "word": "Order Book",
+      "category": "blockchain",
+      "def": "A list of buy and sell orders for an asset, showing market depth."
+    },
+    {
+      "word": "Limit Order",
+      "category": "blockchain",
+      "def": "An order to buy or sell at a specific price or better."
+    },
+    {
+      "word": "Market Order",
+      "category": "blockchain",
+      "def": "An order to buy or sell immediately at the best available current price."
+    },
+    {
+      "word": "Stop Loss",
+      "category": "blockchain",
+      "def": "An order that automatically sells when the price drops to a specified level."
+    },
+    {
+      "word": "Arbitrage",
+      "category": "blockchain",
+      "def": "Profiting from price differences of the same asset across different markets."
+    },
+    {
+      "word": "Trading Pair",
+      "category": "blockchain",
+      "def": "Two assets that can be traded against each other (e.g., ETH/USDC)."
+    },
+    {
+      "word": "Base Asset",
+      "category": "blockchain",
+      "def": "The asset being bought or sold in a trading pair."
+    },
+    {
+      "word": "Quote Asset",
+      "category": "blockchain",
+      "def": "The asset used to quote the price in a trading pair."
+    },
+    {
+      "word": "Candlestick Chart",
+      "category": "blockchain",
+      "def": "A price chart showing open, high, low, and close prices for specific time periods."
+    },
+    {
+      "word": "Bull Market",
+      "category": "blockchain",
+      "def": "A market characterized by rising prices and investor optimism."
+    },
+    {
+      "word": "Bear Market",
+      "category": "blockchain",
+      "def": "A market characterized by falling prices and investor pessimism."
+    },
+    {
+      "word": "HODL",
+      "category": "blockchain",
+      "def": "Holding cryptocurrency long-term despite price volatility (originally a typo of 'hold')."
+    },
+    {
+      "word": "FOMO",
+      "category": "blockchain",
+      "def": "Fear Of Missing Out - buying due to fear of missing potential gains."
+    },
+    {
+      "word": "FUD",
+      "category": "blockchain",
+      "def": "Fear, Uncertainty, and Doubt - negative information spread to influence sentiment."
+    },
+    {
+      "word": "Whale",
+      "category": "blockchain",
+      "def": "An individual or entity holding large amounts of cryptocurrency, able to influence prices."
+    },
+    {
+      "word": "Pump and Dump",
+      "category": "blockchain",
+      "def": "Artificially inflating an asset's price to sell at profit, then causing a crash."
+    },
+    {
+      "word": "Rug Pull",
+      "category": "blockchain",
+      "def": "A scam where developers abandon a project and steal investors' funds."
+    },
+    {
+      "word": "Shill",
+      "category": "blockchain",
+      "def": "Promoting a cryptocurrency or project for personal gain, often misleadingly."
+    },
+    {
+      "word": "Gas War",
+      "category": "blockchain",
+      "def": "Competition to get transactions processed by offering higher gas prices."
+    },
+    {
+      "word": "51% Attack",
+      "category": "blockchain",
+      "def": "When an entity controls majority hash power and can manipulate the blockchain."
+    },
+    {
+      "word": "Double Spend",
+      "category": "blockchain",
+      "def": "Using the same cryptocurrency units in multiple transactions, prevented by blockchain consensus."
+    },
+    {
+      "word": "Reorg",
+      "category": "blockchain",
+      "def": "Reorganization of blockchain history when a longer chain becomes the canonical one."
+    },
+    {
+      "word": "Consensus Algorithm",
+      "category": "blockchain",
+      "def": "The specific method used to achieve agreement among distributed network participants."
+    },
+    {
+      "word": "Byzantine Fault Tolerance",
+      "category": "blockchain",
+      "def": "A system's ability to reach consensus even when some nodes fail or act maliciously."
+    },
+    {
+      "word": "Sybil Attack",
+      "category": "blockchain",
+      "def": "Creating multiple fake identities to gain disproportionate influence in a network."
+    },
+    {
+      "word": "Eclipse Attack",
+      "category": "blockchain",
+      "def": "Isolating a node by controlling all its network connections."
+    },
+    {
+      "word": "Dust Attack",
+      "category": "blockchain",
+      "def": "Sending tiny amounts of crypto to many addresses to de-anonymize users."
+    },
+    {
+      "word": "Timestamp",
+      "category": "blockchain",
+      "def": "A record of when a block or transaction was created."
+    },
+    {
+      "word": "Block Propagation",
+      "category": "blockchain",
+      "def": "The process of spreading new blocks across the network."
+    },
+    {
+      "word": "Uncle Block",
+      "category": "blockchain",
+      "def": "In Ethereum, a valid block not included in the main chain but still rewarded."
+    },
+    {
+      "word": "Orphan Block",
+      "category": "blockchain",
+      "def": "A valid block not part of the longest chain, eventually discarded."
+    },
+    {
+      "word": "Checkpoint",
+      "category": "blockchain",
+      "def": "A point in blockchain history considered irreversible for security."
+    },
+    {
+      "word": "Light Client",
+      "category": "blockchain",
+      "def": "A node that doesn't store the full blockchain, verifying using block headers."
+    },
+    {
+      "word": "Full Node",
+      "category": "blockchain",
+      "def": "A node storing complete blockchain history and validating all transactions."
+    },
+    {
+      "word": "Archive Node",
+      "category": "blockchain",
+      "def": "A full node also storing all historical states of the blockchain."
+    },
+    {
+      "word": "Pruning",
+      "category": "blockchain",
+      "def": "Removing old blockchain data to reduce storage requirements."
+    },
+    {
+      "word": "Sharding",
+      "category": "blockchain",
+      "def": "Splitting a blockchain into parallel chains to improve scalability."
+    },
+    {
+      "word": "Beacon Chain",
+      "category": "blockchain",
+      "def": "The coordination layer in Ethereum 2.0 managing the proof-of-stake consensus."
+    },
+    {
+      "word": "Execution Layer",
+      "category": "blockchain",
+      "def": "The layer handling transaction execution and smart contract logic."
+    },
+    {
+      "word": "Consensus Layer",
+      "category": "blockchain",
+      "def": "The layer managing block production and finality in blockchain systems."
+    },
+    {
+      "word": "Data Availability",
+      "category": "blockchain",
+      "def": "Ensuring transaction data is accessible to verify blockchain state."
+    },
+    {
+      "word": "Calldata",
+      "category": "blockchain",
+      "def": "Data included with a transaction, often containing function calls and parameters."
+    },
+    {
+      "word": "Blob",
+      "category": "blockchain",
+      "def": "Large data objects in EIP-4844 for cheaper rollup data storage."
+    },
+    {
+      "word": "Proto-danksharding",
+      "category": "blockchain",
+      "def": "An Ethereum upgrade introducing blob transactions for rollup scaling."
+    },
+    {
+      "word": "Danksharding",
+      "category": "blockchain",
+      "def": "Full implementation of Ethereum sharding using data availability sampling."
+    },
+    {
+      "word": "Proposer-Builder Separation",
+      "category": "blockchain",
+      "def": "Separating block proposal from block building to improve decentralization."
+    }
+  ]
+}

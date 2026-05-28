@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="description" content="A community-built guide to Miden — the programmable privacy network for the next generation of compliant finance." />
+  <title>Miden Handbook — Community Guide</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/chapters.css" />
+  <link rel="stylesheet" href="css/glossary.css" />
+  <link rel="stylesheet" href="css/interactive.css" />
+</head>
+<body>
+
+<!-- ══ FLOATING BUBBLES ══════════════════════════ -->
+<div class="bubbles-container" aria-hidden="true">
+  <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+  <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+  <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
+
+<!-- ══ NAV ═══════════════════════════════════════ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img
+      src="https://cdn.prod.website-files.com/696f30104ad6945a358d99b2/6978661c7fb53fc70069a68f_miden-brand-logo.svg"
+      alt="Miden"
+      style="height:24px;width:auto"
+    />
+    <div>
+      <span class="nav-logo-sub" style="margin-top:3px">Community Handbook</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="https://miden.xyz/testnet"    class="nav-link">Testnet</a>
+    <a href="https://miden.xyz/ecosystem"  class="nav-link">Ecosystem</a>
+    <a href="https://miden.xyz/developers" class="nav-link">Developers</a>
+    <a href="https://miden.xyz/about"      class="nav-link">About</a>
+    <a href="https://miden.xyz"            class="nav-link">miden.xyz</a>
+  </div>
+
+  <a href="https://miden.xyz/testnet" class="nav-cta">Join Testnet →</a>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-wm" aria-hidden="true">
+    <svg width="700" height="700" viewBox="0 0 100 100" fill="none">
+      <path d="M10 80V20L50 58L90 20V80" stroke="#c4520a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="eyebrow">
+    <span class="eyebrow-dot"></span>
+    <span class="eyebrow-txt">Edge Blockchain · Programmable Privacy · Community Handbook</span>
+  </div>
+
+  <h1>Learn Miden.<br /><span class="grad">Understand everything.</span></h1>
+
+  <p class="hero-sub">A community-built guide to Miden — the programmable privacy network for the next generation of compliant finance. From first principles to building on the network.</p>
+
+  <div class="hero-btns">
+    <a href="#chapters" class="btn-p">
+      Start Reading
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="https://miden.xyz/developers" class="btn-g" target="_blank" rel="noopener">
+      Developer Docs
+      <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="https://miden.xyz/testnet" class="btn-g" target="_blank" rel="noopener">
+      Join Testnet
+      <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true"><div class="scroll-line"></div></div>
+</section>
+
+
+<!-- ══ WHAT IS MIDEN ══════════════════════════════ -->
+<div class="wrap">
+  <span class="slabel rv d1">// What is Miden</span>
+  <h2 class="sh2 rv d2">Practical privacy<br />for the future of finance.</h2>
+  <p class="ssub rv d3">Miden combines high throughput, private transactions, and verifiable computation — designed to power the next generation of financial applications that demand both privacy and compliance.</p>
+
+  <div class="pillars rv d3">
+    <div class="pillar">
+      <div class="pillar-n">01</div>
+      <div class="pillar-t">Customizable Privacy</div>
+      <div class="pillar-d">Miden gives builders the choice between public and private transactions, enabling a new class of business applications that demand both compliance and confidentiality.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">02</div>
+      <div class="pillar-t">Quantum Secure</div>
+      <div class="pillar-d">Built with post-quantum cryptography, Miden is designed to future-proof your business on-chain — ready for what comes after today's cryptographic standards.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">03</div>
+      <div class="pillar-t">Regulation Ready</div>
+      <div class="pillar-d">With programmable privacy at its core, Miden is built for a future of regulatory clarity — enabling selective disclosure, compliance proofs, and auditable privacy flows.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider rv" />
+
+
+<!-- ══ HANDBOOK CHAPTERS ══════════════════════════ -->
+<div class="wrap" id="chapters">
+  <span class="slabel rv d1">// Handbook Chapters</span>
+  <h2 class="sh2 rv d2">Everything you need<br />to understand Miden.</h2>
+  <p class="ssub rv d3">Nine chapters covering every layer of the Miden protocol — from why it was built to how to develop on it.</p>
+
+  <div class="ch-grid rv d2">
+
+    <!-- 01 Featured -->
+    <div onclick="openChapter(0)" class="ch-card ch-featured" role="button" tabindex="0" aria-label="Open chapter 1: What is Miden?">
+      <div class="ch-fl">
+        <span class="cn">01</span>
+        <span class="ctag">Start Here</span>
+        <div class="ct">What is Miden?</div>
+        <div class="cd">A clear, simple introduction to what Miden is, why programmable privacy matters, and how Miden is building the next generation of compliant finance infrastructure.</div>
+        <div class="carr">Read chapter <span>→</span></div>
+      </div>
+      <div class="ch-deco" aria-hidden="true">
+        <div class="dbar" style="width:100%"></div>
+        <div class="dbar" style="width:72%"></div>
+        <div class="dbar" style="width:90%"></div>
+        <div class="dbar" style="width:55%"></div>
+        <div class="dbar" style="width:80%"></div>
+        <div class="dbar" style="width:40%"></div>
+      </div>
+    </div>
+
+    <div onclick="openChapter(1)" class="ch-card" role="button" tabindex="0"><span class="cn">02</span><span class="ctag">Context</span><div class="ct">Why Miden Exists</div><div class="cd">The problem with today's blockchain privacy and why Miden was built to enable practical, compliant, programmable privacy at scale.</div><div class="carr">Read chapter <span>→</span></div></div>
+    <div onclick="openChapter(2)" class="ch-card" role="button" tabindex="0"><span class="cn">03</span><span class="ctag">Core</span><div class="ct">Core Concepts</div><div class="cd">Zero-knowledge proofs, client-side proving, private state, and the Miden VM — the foundational ideas behind the protocol.</div><div class="carr">Read chapter <span>→</span></div></div>
+    <div onclick="openChapter(3)" class="ch-card" role="button" tabindex="0"><span class="cn">04</span><span class="ctag">Technical</span><div class="ct">How Miden Works</div><div class="cd">Architecture deep-dive — accounts, notes, transactions, the Miden VM, and how privacy is enforced at the protocol layer.</div><div class="carr">Read chapter <span>→</span></div></div>
+    <div onclick="openChapter(4)" class="ch-card" role="button" tabindex="0"><span class="cn">05</span><span class="ctag">Privacy</span><div class="ct">Public vs Private</div><div class="cd">Understanding the spectrum of privacy in Miden — when to use public transactions, private notes, and selective disclosure.</div><div class="carr">Read chapter <span>→</span></div></div>
+    <div onclick="openChapter(5)" class="ch-card" role="button" tabindex="0"><span class="cn">06</span><span class="ctag">Testnet</span><div class="ct">Using the Testnet</div><div class="cd">How to connect, set up your wallet, make your first private transaction, and test your application in a live environment.</div><div class="carr">Read chapter <span>→</span></div></div>
+    <div onclick="openChapter(6)" class="ch-card" role="button" tabindex="0"><span class="cn">07</span><span class="ctag">Build</span><div class="ct">Building on Miden</div><div class="cd">Smart contracts, the Miden SDK, account abstractions, note scripts — everything you need to start shipping applications on Miden.</div><div class="carr">Read chapter <span>→</span></div></div>
+    <div onclick="openChapter(7)" class="ch-card" role="button" tabindex="0"><span class="cn">08</span><span class="ctag">Ecosystem</span><div class="ct">The Miden Ecosystem</div><div class="cd">Pioneer program, projects, partners — a map of the growing ecosystem being built on the Miden programmable privacy network.</div><div class="carr">Read chapter <span>→</span></div></div>
+    <a href="#glossary"            class="ch-card"><span class="cn">09</span><span class="ctag">Reference</span><div class="ct">Miden Glossary</div><div class="cd">All Miden-specific terms, concepts, and acronyms explained clearly — your quick-reference guide to the protocol's vocabulary.</div><div class="carr">Browse glossary <span>→</span></div></a>
+
+  </div>
+</div>
+
+<hr class="divider rv" />
+
+
+<!-- ══ THE TEAM ════════════════════════════════════ -->
+<div class="wrap" id="team">
+  <span class="slabel rv d1">// The Team</span>
+  <h2 class="sh2 rv d2">The builders behind Miden.</h2>
+  <p class="ssub rv d3">Engineers, cryptographers, and product thinkers — former Meta/Facebook blockchain researchers focused on turning advanced ZK research into real financial infrastructure.</p>
+
+  <div class="team-grid">
+
+    <div class="team-card td1">
+      <div class="t-avatar">
+        <img src="assets/team/bobbin-threadbare.jpg" alt="Bobbin Threadbare" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#f0ebe0;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#c4520a,#8b5e3c);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">BT</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Co-Founder &amp; CTO</div>
+        <div class="t-name">Bobbin Threadbare</div>
+        <div class="t-bio">Former lead ZK researcher at Meta. Creator of the Miden VM and pioneer of the edge blockchain paradigm. Widely regarded as one of the foremost STARK experts in the world.</div>
+        <a href="https://x.com/bobbinth" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@bobbinth</a>
+      </div>
+    </div>
+
+    <div class="team-card td2">
+      <div class="t-avatar">
+        <img src="assets/team/dominik-schmid.jpg" alt="Dominik Schmid" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#ece7dc;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#8b5e3c,#c4520a);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">DS</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Co-Founder &amp; Head of Product</div>
+        <div class="t-name">Dominik Schmid</div>
+        <div class="t-bio">Former engineer at ConsenSys and the Raiden Network. Leads product and protocol design at Miden, responsible for the account-and-note model at the heart of Miden's privacy architecture.</div>
+        <a href="https://x.com/schmiddominik1" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@schmiddominik1</a>
+      </div>
+    </div>
+
+    <div class="team-card td3">
+      <div class="t-avatar">
+        <img src="assets/team/azeem-khan.jpg" alt="Azeem Khan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#f2ece3;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#e06820,#c4520a);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">AK</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Co-Founder</div>
+        <div class="t-name">Azeem Khan</div>
+        <div class="t-bio">Former Gitcoin fundraising lead and ex-ConsenSys. Co-founder of MorphL2. Named to the Faces of Crypto Philanthropy list and contributor to the World Economic Forum.</div>
+        <a href="https://x.com/azeemk" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@azeemk</a>
+      </div>
+    </div>
+
+    <div class="team-card td1">
+      <div class="t-avatar">
+        <img src="assets/team/akshit-sharma.jpg" alt="Akshit Sharma" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#eee9df;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#c4520a,#e06820);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">AS</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Chief Operating Officer</div>
+        <div class="t-name">Akshit Sharma</div>
+        <div class="t-bio">Operations leader with a focus on scaling decentralized infrastructure. Driving the strategic growth and daily operations of the Miden ecosystem.</div>
+        <a href="https://x.com/midenmonk" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@midenmonk</a>
+      </div>
+    </div>
+
+    <div class="team-card td2">
+      <div class="t-avatar">
+        <img src="assets/team/francois-garillot.jpg" alt="François Garillot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#ede8de;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#8b5e3c,#b8946a);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">FG</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Engineering Lead</div>
+        <div class="t-name">François Garillot</div>
+        <div class="t-bio">Leading the engineering efforts at Miden. Focused on the core protocol implementation, Miden VM development, and ensuring high-performance execution.</div>
+        <a href="https://x.com/huitseeker" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@huitseeker</a>
+      </div>
+    </div>
+
+    <div class="team-card td3">
+      <div class="t-avatar">
+        <img src="assets/team/serge-radinovich.jpg" alt="Serge Radinovich" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#f0ebe0;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#c4520a,#8b5e3c);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">SR</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Staff Protocol Engineer</div>
+        <div class="t-name">Serge Radinovich</div>
+        <div class="t-bio">Experienced protocol engineer focused on building robust and scalable blockchain systems. Contributing to the core architecture of the Miden rollup.</div>
+        <a href="https://x.com/sergeradd" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@sergeradd</a>
+      </div>
+    </div>
+
+    <div class="team-card td1">
+      <div class="t-avatar">
+        <img src="assets/team/alexander-john-lee.jpg" alt="Alexander John Lee" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#ece7dc;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#e06820,#8b5e3c);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">AL</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Protocol Engineer</div>
+        <div class="t-name">Alexander John Lee</div>
+        <div class="t-bio">Rust specialist and protocol engineer working on the Miden node and virtual machine. Deeply involved in the design of the state and execution models.</div>
+        <a href="https://x.com/alexanderlee314" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@alexanderlee314</a>
+      </div>
+    </div>
+
+    <div class="team-card td2">
+      <div class="t-avatar">
+        <img src="assets/team/paul-schoenfelder.jpg" alt="Paul Schoenfelder" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#f2ece3;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#b8946a,#c4520a);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">PS</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Protocol Engineer</div>
+        <div class="t-name">Paul Schoenfelder</div>
+        <div class="t-bio">Architectural engineer and prominent Elixir/Rust contributor. Bringing expertise in systems programming to the core Miden protocol development.</div>
+        <a href="https://x.com/gotbones" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@gotbones</a>
+      </div>
+    </div>
+
+    <div class="team-card td3">
+      <div class="t-avatar">
+        <img src="assets/team/adrian-hamelink.jpg" alt="Adrian Hamelink" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#eee9df;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#c4520a,#e06820);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">AH</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Applied Cryptography Engineer</div>
+        <div class="t-name">Adrian Hamelink</div>
+        <div class="t-bio">Specializing in applied cryptography and ZK proofs. Working on the implementation of advanced cryptographic primitives for Miden.</div>
+        <a href="https://x.com/adr1anh" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@adr1anh</a>
+      </div>
+    </div>
+
+    <div class="team-card td1">
+      <div class="t-avatar">
+        <img src="assets/team/marti-gorny.jpg" alt="Marti Gorny" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#f0ebe0;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#8b5e3c,#c4520a);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">MG</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Protocol Engineer</div>
+        <div class="t-name">Marti Gorny</div>
+        <div class="t-bio">Focused on protocol research and implementation. Contributing to the cryptographic foundations and security of the Miden network.</div>
+        <a href="https://x.com/mmagician" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@mmagician</a>
+      </div>
+    </div>
+
+    <div class="team-card td2">
+      <div class="t-avatar">
+        <img src="assets/team/philipp-keinberger.jpg" alt="Philipp Keinberger" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#ece7dc;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#c4520a,#b8946a);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">PK</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">DevRel &amp; Ecosystem Engineer</div>
+        <div class="t-name">Philipp Keinberger</div>
+        <div class="t-bio">Bridging the gap between the core protocol and the developer community. Empowering builders to leverage Miden's unique privacy features.</div>
+        <a href="https://x.com/phil10013" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@phil10013</a>
+      </div>
+    </div>
+
+    <div class="team-card td3">
+      <div class="t-avatar">
+        <img src="assets/team/ben-schiller.jpg" alt="Ben Schiller" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#f2ece3;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#e06820,#c4520a);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">BS</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Head of Communications</div>
+        <div class="t-name">Ben Schiller</div>
+        <div class="t-bio">Leading communications and narrative strategy at Miden. Focused on articulating the value of programmable privacy to a global audience.</div>
+        <a href="https://x.com/btschiller" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@btschiller</a>
+      </div>
+    </div>
+
+    <div class="team-card td1">
+      <div class="t-avatar">
+        <img src="assets/team/ahmad-khan.jpg" alt="Ahmad Khan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#eee9df;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#c4520a,#8b5e3c);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">AK</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Product Designer</div>
+        <div class="t-name">Ahmad Khan</div>
+        <div class="t-bio">Specializing in designing intuitive and beautiful product experiences for complex cryptographic systems and developer tools.</div>
+        <a href="https://x.com/aesopsolo" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@aesopsolo</a>
+      </div>
+    </div>
+
+    <div class="team-card td2">
+      <div class="t-avatar">
+        <img src="assets/team/gaylord-warner.jpg" alt="Gaylord Warner" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#ede8de;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#b8946a,#8b5e3c);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">GW</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Product Marketing</div>
+        <div class="t-name">Gaylord Warner</div>
+        <div class="t-bio">Product marketing lead with a focus on developer adoption and growing the Miden ecosystem through strategic positioning.</div>
+        <a href="https://x.com/zkgaylord" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@zkgaylord</a>
+      </div>
+    </div>
+
+    <div class="team-card td3">
+      <div class="t-avatar">
+        <img src="assets/team/daniel-okechukwu.jpg" alt="Daniel Okechukwu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="t-avatar-svg" style="display:none;background:#f0ebe0;align-items:center;justify-content:center"><div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#c4520a,#e06820);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff">DO</div></div>
+        <div class="t-fade"></div>
+      </div>
+      <div class="t-body">
+        <div class="t-role">Protocol Engineer</div>
+        <div class="t-name">Daniel Okechukwu</div>
+        <div class="t-bio">Building the future of finance on Miden. Focused on developing efficient and secure protocol solutions for private transactions.</div>
+        <a href="https://x.com/danielokey" target="_blank" rel="noopener" class="t-handle"><svg class="xi" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.264 5.634 5.9-5.634zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@danielokey</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider rv" />
+
+
+<!-- ══ PIONEER PROJECTS ════════════════════════════ -->
+<div class="wrap" id="ecosystem">
+  <span class="slabel rv d1">// Pioneer Projects</span>
+  <h2 class="sh2 rv d2">Built on Miden.</h2>
+  <p class="ssub rv d3">Top teams supported through the Miden Pioneer Program — building the future of on-chain economies with programmable privacy.</p>
+
+  <div class="eco-grid">
+
+    <a href="https://www.qash.finance/" target="_blank" rel="noopener" class="eco-card e1">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#f5f0e8,#ede5d8)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><rect x="20" y="14" width="260" height="52" rx="9" fill="rgba(196,82,10,.07)"/><rect x="34" y="26" width="70" height="7" rx="3" fill="rgba(196,82,10,.22)"/><rect x="34" y="39" width="110" height="5" rx="2" fill="rgba(196,82,10,.12)"/><rect x="34" y="50" width="80" height="5" rx="2" fill="rgba(196,82,10,.08)"/><circle cx="240" cy="40" r="18" fill="rgba(196,82,10,.11)" stroke="rgba(196,82,10,.2)" stroke-width="1.5"/><path d="M233 40h14M240 33v14" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=qash.finance" alt="Qash" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">Qash</div><div class="eco-desc">B2B Neobank for Payroll &amp; Treasury Management</div></div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <a href="https://zoroswap.com/" target="_blank" rel="noopener" class="eco-card e2">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#f0ebe0,#e8e0d0)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><path d="M20 65 Q80 18 150 42 Q220 66 280 18" stroke="rgba(196,82,10,.32)" stroke-width="2" fill="none"/><circle cx="150" cy="42" r="5" fill="#c4520a" opacity=".6"/><circle cx="80" cy="32" r="3" fill="rgba(196,82,10,.32)"/><circle cx="220" cy="50" r="3" fill="rgba(196,82,10,.32)"/></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=zoroswap.com" alt="ZoroSwap" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">ZoroSwap</div><div class="eco-desc">Public/Private Oracle-informed AMM</div></div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <a href="https://dome.cash/" target="_blank" rel="noopener" class="eco-card e3">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#eee9df,#e5ddd0)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><circle cx="70" cy="40" r="22" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.16)" stroke-width="1.5"/><circle cx="230" cy="40" r="22" fill="rgba(139,94,60,.08)" stroke="rgba(139,94,60,.16)" stroke-width="1.5"/><path d="M92 36 L208 36 M92 44 L208 44" stroke="rgba(196,82,10,.22)" stroke-width="1.5" stroke-dasharray="5,4"/><circle cx="150" cy="40" r="8" fill="rgba(196,82,10,.18)"/><text x="70" y="45" text-anchor="middle" font-size="9" fill="rgba(196,82,10,.5)" font-family="monospace">ETH</text><text x="230" y="45" text-anchor="middle" font-size="9" fill="rgba(139,94,60,.5)" font-family="monospace">MDN</text></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=dome.cash" alt="Dome" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">Dome</div><div class="eco-desc">Crosschain Platform for Private Financial Flows</div></div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <a href="https://luminaengine.ai/" target="_blank" rel="noopener" class="eco-card e4">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#f0ebe0,#e5ddd0)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><circle cx="70" cy="40" r="20" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.16)" stroke-width="1.5"/><circle cx="150" cy="40" r="20" fill="rgba(196,82,10,.12)" stroke="rgba(196,82,10,.22)" stroke-width="1.5"/><circle cx="230" cy="40" r="20" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.16)" stroke-width="1.5"/><path d="M90 40h40M170 40h40" stroke="rgba(196,82,10,.3)" stroke-width="2" stroke-dasharray="5,3"/><circle cx="150" cy="40" r="6" fill="rgba(196,82,10,.4)"/></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=luminaengine.ai" alt="Lumina" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">Lumina Engine</div><div class="eco-desc">Private Cross-Chain Trading Infrastructure</div></div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <a href="https://midenbrowserwallet.com/" target="_blank" rel="noopener" class="eco-card e5">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#f2ece2,#e9e1d2)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><rect x="60" y="10" width="180" height="60" rx="8" fill="rgba(196,82,10,.06)" stroke="rgba(196,82,10,.12)" stroke-width="1"/><rect x="60" y="10" width="180" height="18" rx="8" fill="rgba(196,82,10,.1)"/><rect x="60" y="20" width="180" height="8" fill="rgba(196,82,10,.08)"/><rect x="76" y="36" width="55" height="5" rx="2" fill="rgba(196,82,10,.16)"/><rect x="76" y="46" width="90" height="4" rx="2" fill="rgba(196,82,10,.1)"/></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=midenbrowserwallet.com" alt="Miden Wallet" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">Miden Wallet</div><div class="eco-desc">In-browser Wallet for Easy Payments</div></div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <a href="https://multisig.miden.xyz/" target="_blank" rel="noopener" class="eco-card e6">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#ede8de,#e3ddd0)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><circle cx="90" cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)" stroke-width="1.5"/><circle cx="150" cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)" stroke-width="1.5"/><circle cx="210" cy="40" r="18" fill="rgba(196,82,10,.08)" stroke="rgba(196,82,10,.18)" stroke-width="1.5"/><path d="M83 40l6-6 4 4 8-8" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M143 40l6-6 4 4 8-8" stroke="rgba(196,82,10,.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=multisig.miden.xyz" alt="Inicio" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">Inicio Labs</div><div class="eco-desc">Multisig Solution for Miden</div></div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <a href="https://miden.name/" target="_blank" rel="noopener" class="eco-card e7">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#f0ebe0,#e7e0d2)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><rect x="45" y="24" width="210" height="32" rx="16" fill="rgba(196,82,10,.07)" stroke="rgba(196,82,10,.16)" stroke-width="1"/><rect x="62" y="35" width="85" height="10" rx="5" fill="rgba(196,82,10,.14)"/><text x="215" y="44" text-anchor="middle" font-size="11" fill="rgba(196,82,10,.45)" font-family="monospace" font-weight="600">.miden</text></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=miden.name" alt="Miden Name" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">Miden Name</div><div class="eco-desc">Name Service for Miden</div></div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <a href="https://playground.miden.xyz/" target="_blank" rel="noopener" class="eco-card e8">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#eae4d8,#e0d9ca)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><rect x="40" y="12" width="220" height="56" rx="6" fill="rgba(24,18,10,.06)" stroke="rgba(196,82,10,.1)" stroke-width="1"/><circle cx="57" cy="26" r="4" fill="rgba(196,82,10,.32)"/><circle cx="70" cy="26" r="4" fill="rgba(196,82,10,.18)"/><circle cx="83" cy="26" r="4" fill="rgba(196,82,10,.1)"/><rect x="52" y="38" width="55" height="4" rx="2" fill="rgba(196,82,10,.22)"/><rect x="52" y="48" width="95" height="4" rx="2" fill="rgba(196,82,10,.12)"/><rect x="116" y="38" width="28" height="4" rx="2" fill="rgba(139,94,60,.28)"/></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=playground.miden.xyz" alt="Walnut" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">Playground</div><div class="eco-desc">Miden Playground &amp; Learning Environment</div></div>
+      <div class="eco-foot">Visit project <span>→</span></div>
+    </a>
+
+    <a href="https://miden.xyz/ecosystem/program/pioneers" target="_blank" rel="noopener" class="eco-card e9">
+      <div class="eco-vis" style="background:linear-gradient(135deg,#f5f0e8,#ebe3d5)">
+        <svg width="100%" height="100%" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid slice"><path d="M150 70 L124 44 L150 52 L176 44 Z" fill="rgba(196,82,10,.12)" stroke="rgba(196,82,10,.22)" stroke-width="1.5" stroke-linejoin="round"/><path d="M150 52 L132 30 L150 38 L168 30 Z" fill="rgba(196,82,10,.18)" stroke="rgba(196,82,10,.28)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="150" cy="24" r="7" fill="rgba(196,82,10,.38)"/></svg>
+        <div class="eco-logo-wrap"><img class="eco-fav" src="https://www.google.com/s2/favicons?sz=64&domain=miden.xyz" alt="Pioneer Program" onerror="this.style.display='none'"/></div>
+      </div>
+      <div class="eco-body"><div class="eco-name">Pioneer Program</div><div class="eco-desc">Apply to build with Miden's support &amp; funding</div></div>
+      <div class="eco-foot">Learn more <span>→</span></div>
+    </a>
+
+  </div>
+</div>
+
+<hr class="divider rv" />
+
+
+<!-- ══ CTA ════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="cta-box rv d2">
+    <div class="cta-wm" aria-hidden="true">
+      <svg width="260" height="260" viewBox="0 0 100 100" fill="none">
+        <path d="M10 80V20L50 58L90 20V80" stroke="#c4520a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="cta-lbl">// Get Started</div>
+    <h2 class="cta-h2">Start with Chapter One.</h2>
+    <p class="cta-sub">Whether you're a developer, researcher, or simply curious about programmable privacy — this handbook walks you through Miden from the ground up.</p>
+    <div class="cta-btns">
+      <a href="#chapters" class="btn-p">
+        Read the Handbook
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://miden.xyz/testnet" class="btn-g" target="_blank" rel="noopener">
+        Join Testnet
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://miden.xyz/developers" class="btn-g" target="_blank" rel="noopener">
+        Start Building
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ GLOSSARY ═══════════════════════════════════ -->
+<div id="glossary">
+  <div class="wrap" style="padding-bottom:0">
+    <div class="glossary-header">
+      <div class="glossary-header-left">
+        <span class="slabel rv d1">// Miden Glossary</span>
+        <h2 class="sh2 rv d2">230 terms explained.</h2>
+        <p class="ssub rv d3" style="margin-bottom:0">Every Miden and Web3 term you need to know, explained in plain English.</p>
+      </div>
+      <button class="glossary-toggle-btn rv d3" id="glossary-toggle-btn" aria-expanded="false" aria-controls="glossary-body">
+        <span class="glt-icon">▾</span>
+        <span class="glt-text">Browse All Terms</span>
+        <span class="glt-count">230</span>
+      </button>
+    </div>
+
+    <!-- Preview chips (shown when collapsed) -->
+    <div id="glossary-preview" class="glossary-preview rv d4"></div>
+  </div>
+
+  <!-- Collapsible body -->
+  <div class="glossary-body" id="glossary-body" aria-hidden="true">
+    <div class="glossary-body-inner">
+      <div class="wrap" style="padding-top:0">
+        <div class="glossary-controls">
+          <input type="text" id="glossary-search" placeholder="Search 230 terms…" aria-label="Search glossary" />
+          <select id="glossary-filter" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+            <option value="miden">Miden</option>
+            <option value="zk">Zero-Knowledge</option>
+            <option value="blockchain">Blockchain</option>
+            <option value="crypto">Cryptography</option>
+            <option value="defi">DeFi</option>
+          </select>
+          <div id="results-count" aria-live="polite"></div>
+        </div>
+        <div id="glossary-grid" role="list"></div>
+        <div id="no-results" aria-live="polite">
+          <p>No terms found</p>
+          <p>Try a different search term or filter</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Glossary data — loaded by glossary.js -->
+<script id="glossary-data" type="application/json">
+{"terms":[{"word":"Miden","category":"miden","def":"A programmable privacy network built on zero-knowledge proofs, designed for the next generation of compliant finance. Enables private transactions while maintaining regulatory compliance through selective disclosure."},{"word":"Miden VM","category":"miden","def":"The Miden Virtual Machine — a zero-knowledge virtual machine that enables private, verifiable computation. Built on STARK proofs, it allows users to execute programs locally and prove their execution without revealing inputs."},{"word":"Edge Blockchain","category":"miden","def":"A blockchain architecture pioneered by Miden where computation and state changes happen on the client side (the 'edge'), rather than on a shared network. Transactions are executed locally and proven with ZK proofs."},{"word":"Winterfell","category":"miden","def":"An open-source STARK prover library created by Bobbin Threadbare, one of the fastest STARK implementations. The proving engine that powers Miden VM."},{"word":"Account Model","category":"miden","def":"Miden's approach to managing user state. Accounts can hold complex state and execute arbitrary programs, enabling smart contract-like functionality with privacy."},{"word":"Note Model","category":"miden","def":"Miden's transaction approach. Notes are private messages between accounts containing assets and execution scripts, enabling asynchronous private transactions."},{"word":"Client-Side Proving","category":"miden","def":"Miden's approach where users execute transactions and generate proofs on their own devices rather than on a shared network, enabling privacy and scalability."},{"word":"MAST","category":"miden","def":"Merkelized Abstract Syntax Tree used in Miden for efficient code representation and verification."},{"word":"Polygon Miden","category":"miden","def":"The official name of the Miden protocol when it was part of the Polygon ecosystem, now independently developed."},{"word":"Miden Assembly","category":"miden","def":"The low-level programming language for the Miden VM, designed for writing efficient zero-knowledge programs."},{"word":"Zero-Knowledge Proof","category":"zk","def":"A cryptographic method where one party can prove to another that a statement is true, without revealing any information beyond the validity of the statement itself."},{"word":"STARK","category":"zk","def":"Scalable Transparent ARgument of Knowledge. A type of zero-knowledge proof that is quantum-resistant, requires no trusted setup, and scales well for large computations."},{"word":"SNARK","category":"zk","def":"Succinct Non-interactive ARgument of Knowledge. Produces very small proofs but most require a trusted setup and aren't quantum-resistant."},{"word":"Prover","category":"zk","def":"The party that generates a zero-knowledge proof, demonstrating knowledge of some information without revealing it."},{"word":"Verifier","category":"zk","def":"The party that checks a zero-knowledge proof to confirm its validity without learning the underlying private information."},{"word":"Proof Generation","category":"zk","def":"The computational process of creating a zero-knowledge proof from a program execution trace or witness data."},{"word":"Proof Verification","category":"zk","def":"The process of checking whether a zero-knowledge proof is valid, typically much faster than generating the proof."},{"word":"Witness","category":"zk","def":"The private input data used by the prover to generate a zero-knowledge proof. Never revealed to the verifier."},{"word":"Circuit","category":"zk","def":"An arithmetic representation of a computation used in ZK proof systems. Programs are compiled to circuits for proof generation."},{"word":"Trusted Setup","category":"zk","def":"A ceremony required by some ZK proof systems (like SNARKs) to generate public parameters. If compromised, the system's security is broken."},{"word":"Recursive Proof","category":"zk","def":"A proof that verifies another proof, enabling proof aggregation and compression for efficient blockchain verification."},{"word":"Proof Aggregation","category":"zk","def":"Combining multiple individual proofs into one proof, reducing verification costs on-chain."},{"word":"Polynomial Commitment","category":"zk","def":"A cryptographic scheme that commits to a polynomial and allows efficient evaluation proofs, fundamental to many ZK systems."},{"word":"FRI Protocol","category":"zk","def":"Fast Reed-Solomon Interactive Oracle Proof — a proximity test used in STARK systems to efficiently verify polynomial evaluations."},{"word":"Plonk","category":"zk","def":"A universal SNARK proof system with a trusted setup that can be reused across different circuits."},{"word":"Groth16","category":"zk","def":"A highly efficient SNARK proof system requiring a circuit-specific trusted setup, widely used in early ZK applications."},{"word":"Halo2","category":"zk","def":"A recursive SNARK proof system that eliminates the need for a trusted setup, developed by the Electric Coin Company."},{"word":"KZG Commitment","category":"zk","def":"Kate-Zaverucha-Goldberg polynomial commitment scheme used in many ZK systems for efficient proof construction."},{"word":"Nullifier","category":"miden","def":"A unique value derived from a private note that proves it has been spent without revealing which note was consumed, preventing double-spending."},{"word":"Note Commitment","category":"miden","def":"A cryptographic hash of a note that is stored on-chain, allowing the network to track note existence without revealing note contents."},{"word":"Transaction Kernel","category":"miden","def":"The core logic that processes transactions in Miden, verifying note consumption and account state changes through ZK proofs."},{"word":"Selective Disclosure","category":"miden","def":"The ability to prove specific facts about private data without revealing the data itself, enabling compliance while maintaining privacy."},{"word":"Tiered Sparse Merkle Tree","category":"miden","def":"Miden's data structure for storing account and note commitments efficiently, supporting both private and public state."},{"word":"Blockchain","category":"blockchain","def":"A distributed ledger technology that records transactions in linked blocks, maintained by a network of nodes without central authority."},{"word":"Consensus Mechanism","category":"blockchain","def":"The method by which distributed nodes agree on the state of a blockchain, examples include Proof of Work and Proof of Stake."},{"word":"Smart Contract","category":"blockchain","def":"Self-executing code deployed on a blockchain that automatically enforces agreement terms when conditions are met."},{"word":"Gas","category":"blockchain","def":"The unit measuring computational effort required to execute operations on Ethereum, paid by users to incentivize validators."},{"word":"Layer 1","category":"blockchain","def":"The base blockchain protocol layer, such as Ethereum or Bitcoin, providing the foundational security and consensus."},{"word":"Layer 2","category":"blockchain","def":"Scaling solutions built on top of Layer 1 blockchains that process transactions off-chain while inheriting L1 security."},{"word":"Rollup","category":"blockchain","def":"A Layer 2 scaling solution that processes transactions off-chain and posts compressed transaction data or proofs to Layer 1."},{"word":"ZK-Rollup","category":"blockchain","def":"A rollup that uses zero-knowledge proofs to verify the correctness of off-chain transactions, enabling faster finality and privacy."},{"word":"Optimistic Rollup","category":"blockchain","def":"A rollup assuming transactions are valid by default, using fraud proofs to challenge invalid transactions during a dispute window."},{"word":"State Channel","category":"blockchain","def":"An off-chain protocol allowing multiple parties to transact directly, settling only the final state on the main blockchain."},{"word":"Bridge","category":"blockchain","def":"A protocol enabling asset and data transfer between different blockchain networks or between L1 and L2."},{"word":"Finality","category":"blockchain","def":"The point at which a blockchain transaction is considered irreversible and permanently confirmed."},{"word":"Fork","category":"blockchain","def":"A change to blockchain protocol rules, either soft (backward compatible) or hard (requiring all nodes to upgrade)."},{"word":"MEV","category":"blockchain","def":"Maximal Extractable Value — profit miners or validators can extract by reordering, inserting, or censoring transactions."},{"word":"Mempool","category":"blockchain","def":"The pool of unconfirmed transactions waiting to be included in a block by miners or validators."},{"word":"Block Time","category":"blockchain","def":"The average time between consecutive blocks being added to a blockchain."},{"word":"Throughput","category":"blockchain","def":"The number of transactions a blockchain can process per second (TPS), a key measure of scalability."},{"word":"State Bloat","category":"blockchain","def":"The problem of continuously growing blockchain state data, increasing storage requirements for all nodes over time."},{"word":"Data Availability","category":"blockchain","def":"Ensuring that the data needed to verify a blockchain's state is accessible to all participants."},{"word":"Validity Proof","category":"blockchain","def":"A cryptographic proof that a state transition is correct, used by ZK-rollups to ensure off-chain execution integrity."},{"word":"Fraud Proof","category":"blockchain","def":"Evidence submitted to challenge an invalid state transition in optimistic rollups during the dispute window."},{"word":"Merkle Tree","category":"blockchain","def":"A tree data structure where each node is the hash of its children, enabling efficient verification of large data sets."},{"word":"Merkle Proof","category":"blockchain","def":"A proof that a specific piece of data is included in a Merkle tree, without revealing the entire tree."},{"word":"Account Abstraction","category":"blockchain","def":"The ability to customize wallet logic and transaction validation beyond standard key-pair signing."},{"word":"EVM","category":"blockchain","def":"Ethereum Virtual Machine — the sandboxed runtime environment for executing Ethereum smart contracts."},{"word":"Bytecode","category":"blockchain","def":"Low-level machine instructions that smart contracts are compiled to for execution in a virtual machine."},{"word":"ABI","category":"blockchain","def":"Application Binary Interface — defines how to interact with a smart contract, specifying function signatures and data types."},{"word":"Event Log","category":"blockchain","def":"A record of specific occurrences emitted by smart contracts, stored on-chain for off-chain indexing."},{"word":"Oracle","category":"blockchain","def":"A service that provides external real-world data to blockchain smart contracts, enabling DeFi applications."},{"word":"Sequencer","category":"blockchain","def":"A node in a rollup network responsible for ordering transactions and submitting them to Layer 1."},{"word":"Validator","category":"blockchain","def":"A node that participates in consensus to validate transactions and add new blocks to the blockchain."},{"word":"Staking","category":"blockchain","def":"Locking up cryptocurrency as collateral to participate in Proof of Stake consensus and earn rewards."},{"word":"Slashing","category":"blockchain","def":"The penalty mechanism in Proof of Stake that destroys a validator's staked tokens for malicious behavior."},{"word":"Epoch","category":"blockchain","def":"A fixed time period used in blockchain systems for organizing validator duties and reward distribution."},{"word":"Checkpoint","category":"blockchain","def":"A block that has been given special finality status, often used in fast finality systems."},{"word":"51% Attack","category":"blockchain","def":"When an entity controls majority hash power and can manipulate the blockchain."},{"word":"Double Spend","category":"blockchain","def":"Using the same cryptocurrency units in multiple transactions, prevented by blockchain consensus."},{"word":"Reorg","category":"blockchain","def":"Reorganization of blockchain history when a longer chain becomes the canonical one."},{"word":"Consensus Algorithm","category":"blockchain","def":"The specific method used to achieve agreement among distributed network participants."},{"word":"Byzantine Fault Tolerance","category":"blockchain","def":"A system's ability to reach consensus even when some nodes fail or act maliciously."},{"word":"Sybil Attack","category":"blockchain","def":"Creating multiple fake identities to gain disproportionate influence in a network."},{"word":"Eclipse Attack","category":"blockchain","def":"Isolating a node by controlling all its network connections."},{"word":"Dust Attack","category":"blockchain","def":"Sending tiny amounts of crypto to many addresses to de-anonymize users."},{"word":"Timestamp","category":"blockchain","def":"A record of when a block or transaction was created."},{"word":"Block Propagation","category":"blockchain","def":"The process of spreading new blocks across the network."},{"word":"Uncle Block","category":"blockchain","def":"In Ethereum, a valid block not included in the main chain but still rewarded."},{"word":"Orphan Block","category":"blockchain","def":"A valid block not part of the longest chain, eventually discarded."},{"word":"Light Client","category":"blockchain","def":"A node that doesn't store the full blockchain, verifying using block headers."},{"word":"Full Node","category":"blockchain","def":"A node storing complete blockchain history and validating all transactions."},{"word":"Archive Node","category":"blockchain","def":"A full node also storing all historical states of the blockchain."},{"word":"Pruning","category":"blockchain","def":"Removing old blockchain data to reduce storage requirements."},{"word":"Sharding","category":"blockchain","def":"Splitting a blockchain into parallel chains to improve scalability."},{"word":"Beacon Chain","category":"blockchain","def":"The coordination layer in Ethereum 2.0 managing the proof-of-stake consensus."},{"word":"Execution Layer","category":"blockchain","def":"The layer handling transaction execution and smart contract logic."},{"word":"Consensus Layer","category":"blockchain","def":"The layer managing block production and finality in blockchain systems."},{"word":"Blob","category":"blockchain","def":"Large data objects in EIP-4844 for cheaper rollup data storage."},{"word":"Proto-danksharding","category":"blockchain","def":"An Ethereum upgrade introducing blob transactions for rollup scaling."},{"word":"Proposer-Builder Separation","category":"blockchain","def":"Separating block proposal from block building to improve decentralization."},{"word":"Hash Function","category":"crypto","def":"A deterministic function that maps arbitrary data to a fixed-size output, fundamental to cryptographic security."},{"word":"SHA-256","category":"crypto","def":"Secure Hash Algorithm 256-bit — a widely used cryptographic hash function used in Bitcoin and many other systems."},{"word":"Keccak-256","category":"crypto","def":"The hash function used in Ethereum, a variant of SHA-3 producing 256-bit outputs."},{"word":"Public Key Cryptography","category":"crypto","def":"Asymmetric encryption using key pairs where a public key encrypts or verifies, and a private key decrypts or signs."},{"word":"Digital Signature","category":"crypto","def":"A cryptographic scheme that provides authenticity and integrity for messages using private-public key pairs."},{"word":"ECDSA","category":"crypto","def":"Elliptic Curve Digital Signature Algorithm — widely used in blockchain systems for transaction signing."},{"word":"EdDSA","category":"crypto","def":"Edwards-curve Digital Signature Algorithm — a modern, efficient signature scheme used in various blockchain systems."},{"word":"Elliptic Curve","category":"crypto","def":"A mathematical structure used in cryptography providing strong security with smaller key sizes than RSA."},{"word":"BLS Signature","category":"crypto","def":"Boneh-Lynn-Shacham signature scheme enabling efficient signature aggregation, used in Ethereum 2.0."},{"word":"Commitment Scheme","category":"crypto","def":"A cryptographic protocol allowing one to commit to a value while keeping it hidden, revealing it later."},{"word":"Random Oracle","category":"crypto","def":"An idealized cryptographic hash function used in security proofs, behaving like a truly random function."},{"word":"Entropy","category":"crypto","def":"A measure of randomness or unpredictability, crucial for generating secure cryptographic keys."},{"word":"Nonce","category":"crypto","def":"A number used only once in cryptographic operations to prevent replay attacks or in proof-of-work mining."},{"word":"Salt","category":"crypto","def":"Random data added to a password or data before hashing to prevent dictionary attacks."},{"word":"Symmetric Encryption","category":"crypto","def":"Encryption using the same key for both encryption and decryption, faster than asymmetric but requires secure key exchange."},{"word":"Homomorphic Encryption","category":"crypto","def":"Encryption allowing computations on encrypted data without decrypting, enabling privacy-preserving data processing."},{"word":"Secure Multi-party Computation","category":"crypto","def":"Protocols allowing multiple parties to jointly compute a function without revealing their individual inputs."},{"word":"Threshold Cryptography","category":"crypto","def":"Cryptographic systems requiring a minimum number of parties to cooperate to perform operations."},{"word":"Pedersen Commitment","category":"crypto","def":"A homomorphic commitment scheme allowing arithmetic on committed values, used in privacy-focused systems."},{"word":"Merkle-Damgård Construction","category":"crypto","def":"A method for building collision-resistant hash functions used in SHA-256 and other hash standards."},{"word":"Fiat-Shamir Transform","category":"crypto","def":"A technique converting interactive proof systems to non-interactive using hash functions."},{"word":"Soundness","category":"crypto","def":"The property ensuring a prover cannot convince a verifier of a false statement except with negligible probability."},{"word":"Completeness","category":"crypto","def":"The property ensuring an honest prover can always convince a verifier of a true statement."},{"word":"Zero-Knowledge Property","category":"crypto","def":"The guarantee that a verifier learns nothing about the witness beyond the validity of the proved statement."},{"word":"Post-Quantum Cryptography","category":"crypto","def":"Cryptographic algorithms resistant to attacks by quantum computers, including lattice-based and hash-based schemes."},{"word":"Lattice Cryptography","category":"crypto","def":"Post-quantum cryptographic schemes based on the hardness of lattice problems."},{"word":"DeFi","category":"defi","def":"Decentralized Finance — financial services built on blockchain using smart contracts, operating without traditional intermediaries."},{"word":"AMM","category":"defi","def":"Automated Market Maker — a decentralized exchange protocol using liquidity pools instead of order books for trading."},{"word":"Liquidity Pool","category":"defi","def":"A smart contract holding reserves of two or more tokens that enables decentralized trading and earns fees for liquidity providers."},{"word":"Yield Farming","category":"defi","def":"Maximizing returns by moving assets across DeFi protocols to earn the highest available yield."},{"word":"Liquidity Mining","category":"defi","def":"Earning protocol tokens by providing liquidity to DeFi platforms, incentivizing early adoption."},{"word":"Impermanent Loss","category":"defi","def":"The temporary loss experienced by liquidity providers when token prices diverge from when they deposited."},{"word":"TVL","category":"defi","def":"Total Value Locked — the total value of assets deposited in a DeFi protocol, a measure of its size and adoption."},{"word":"Flash Loan","category":"defi","def":"An uncollateralized loan that must be borrowed and repaid within a single transaction, enabling arbitrage and liquidations."},{"word":"Collateral","category":"defi","def":"Assets locked as security when borrowing in DeFi protocols, liquidated if the loan becomes undercollateralized."},{"word":"Liquidation","category":"defi","def":"The automatic sale of collateral when a loan's collateral ratio falls below the minimum threshold."},{"word":"CDP","category":"defi","def":"Collateralized Debt Position — a loan position backed by locked collateral, used in protocols like MakerDAO."},{"word":"Stablecoin","category":"defi","def":"A cryptocurrency designed to maintain a stable value, often pegged to a fiat currency like USD."},{"word":"Algorithmic Stablecoin","category":"defi","def":"A stablecoin maintaining its peg through algorithmic supply adjustments rather than collateral backing."},{"word":"Wrapped Token","category":"defi","def":"A token representing another asset on a different blockchain, enabling cross-chain DeFi participation."},{"word":"Token Swap","category":"defi","def":"Exchanging one cryptocurrency for another directly, often through decentralized exchange protocols."},{"word":"Slippage","category":"defi","def":"The difference between expected and actual trade execution price due to liquidity depth or price movement."},{"word":"Price Impact","category":"defi","def":"The effect a trade has on the market price due to the size of the trade relative to available liquidity."},{"word":"Order Book","category":"defi","def":"A list of buy and sell orders organized by price level, used by centralized and some decentralized exchanges."},{"word":"Perpetuals","category":"defi","def":"Derivative contracts with no expiry date, allowing leveraged exposure to asset prices indefinitely."},{"word":"Options","category":"defi","def":"Financial derivatives giving the right but not obligation to buy or sell an asset at a specified price."},{"word":"Vault","category":"defi","def":"A smart contract strategy that automatically manages deposited assets to generate yield."},{"word":"Governance Token","category":"defi","def":"A token granting voting rights in a protocol's decision-making, determining upgrades and parameter changes."},{"word":"DAO","category":"defi","def":"Decentralized Autonomous Organization — an entity governed by smart contracts and token holder votes."},{"word":"Quorum","category":"defi","def":"The minimum participation required for a governance vote to be valid."},{"word":"Multisig","category":"defi","def":"A wallet or contract requiring multiple private key signatures to authorize transactions, enhancing security."},{"word":"Timelock","category":"defi","def":"A delay mechanism requiring a waiting period before a governance decision or smart contract change takes effect."},{"word":"Protocol Fee","category":"defi","def":"A percentage of transaction volume collected by a DeFi protocol, distributed to token holders or the treasury."},{"word":"Treasury","category":"defi","def":"Funds held by a protocol or DAO for development, grants, and operational expenses."},{"word":"Airdrop","category":"defi","def":"Free distribution of tokens to wallet addresses, often used for community building or rewarding early users."},{"word":"IDO","category":"defi","def":"Initial DEX Offering — a fundraising method launching a token on a decentralized exchange."},{"word":"Vesting","category":"defi","def":"A schedule releasing tokens gradually over time, preventing immediate selling by early investors or team members."},{"word":"Token Economics","category":"defi","def":"The design of a token's supply, distribution, and incentive mechanisms to create sustainable economic systems."},{"word":"Whale","category":"defi","def":"An entity holding large amounts of cryptocurrency, capable of significantly influencing market prices."},{"word":"Gas Optimization","category":"defi","def":"Techniques for reducing the computational cost of smart contract execution to minimize transaction fees."},{"word":"Reentrancy","category":"defi","def":"A smart contract vulnerability where external calls allow repeated execution before the first call completes."},{"word":"Front-running","category":"defi","def":"Exploiting knowledge of pending transactions to place a transaction with higher priority for profit."},{"word":"Sandwich Attack","category":"defi","def":"A form of front-running surrounding a victim transaction with buy and sell orders to extract value."},{"word":"Private DEX","category":"defi","def":"A decentralized exchange that hides trade details such as amounts and counterparties using privacy technology."},{"word":"Compliance DeFi","category":"defi","def":"DeFi protocols incorporating regulatory compliance features like KYC verification or transaction reporting."},{"word":"RWA","category":"defi","def":"Real World Assets — tokenized representations of off-chain assets like bonds, real estate, or commodities in DeFi."},{"word":"Tokenization","category":"defi","def":"Converting real-world asset ownership or rights into blockchain tokens."},{"word":"CBDC","category":"defi","def":"Central Bank Digital Currency — a digital form of fiat currency issued by a central bank."},{"word":"KYC","category":"defi","def":"Know Your Customer — identity verification required by regulations to prevent financial crimes."},{"word":"AML","category":"defi","def":"Anti-Money Laundering — regulations and procedures to prevent illegal fund movement through financial systems."},{"word":"Wallet","category":"defi","def":"Software or hardware managing cryptographic keys and enabling users to store, send, and receive cryptocurrency."},{"word":"Seed Phrase","category":"defi","def":"A sequence of words used to recover a cryptocurrency wallet, must be kept secret and never shared."},{"word":"Hardware Wallet","category":"defi","def":"A physical device storing private keys offline for maximum security against online threats."},{"word":"Hot Wallet","category":"defi","def":"A cryptocurrency wallet connected to the internet, providing convenience but less security than cold storage."},{"word":"Cold Storage","category":"defi","def":"Keeping cryptocurrency offline to protect it from online attacks and unauthorized access."},{"word":"NFT","category":"defi","def":"Non-Fungible Token — a unique blockchain token representing ownership of a specific digital or physical asset."},{"word":"ERC-20","category":"defi","def":"The standard interface for fungible tokens on Ethereum, enabling interoperability across wallets and protocols."},{"word":"ERC-721","category":"defi","def":"The standard interface for non-fungible tokens (NFTs) on Ethereum."},{"word":"Interoperability","category":"defi","def":"The ability of different blockchain networks and protocols to communicate and share assets or data."},{"word":"Atomic Swap","category":"defi","def":"A trustless exchange of different cryptocurrencies across chains without a centralized intermediary."},{"word":"Composability","category":"defi","def":"The ability to combine DeFi protocols like building blocks, allowing complex financial products from simpler components."},{"word":"Permissionless","category":"defi","def":"A system anyone can access and use without needing approval from a central authority."},{"word":"Trustless","category":"defi","def":"A system where participants don't need to trust each other, relying instead on cryptographic guarantees."},{"word":"Decentralized","category":"defi","def":"A system distributed across many nodes with no single point of control or failure."}]}
+</script>
+
+<hr class="divider rv" />
+
+
+<!-- ══ PRIVACY CHALLENGE GAME ═════════════════════ -->
+<div id="privacy-game">
+  <span class="slabel rv d1">// Privacy Challenge</span>
+  <h2 class="sh2 rv d2">Test your privacy<br />knowledge.</h2>
+  <p class="ssub rv d3" style="margin-bottom:32px">Real-world scenarios. Pick the right Miden privacy approach. Five rounds — see how many you get right.</p>
+
+  <div class="pg-score-bar rv">
+    <div class="pg-score-item">
+      <div class="pg-score-val" id="pg-score">0</div>
+      <div class="pg-score-lbl">Score</div>
+    </div>
+    <div class="pg-score-item">
+      <div class="pg-score-val" id="pg-round">1 / 5</div>
+      <div class="pg-score-lbl">Round</div>
+    </div>
+    <div class="pg-progress">
+      <div class="pg-score-lbl" style="margin-bottom:4px">Progress</div>
+      <div class="pg-prog-bar"><div class="pg-prog-fill" id="pg-prog" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div id="pg-game-board" class="pg-game-board"></div>
+  <div id="pg-result"     class="pg-result"></div>
+</div>
+
+<hr class="divider rv" />
+
+
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div style="display:flex;align-items:center;gap:9px">
+        <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
+          <rect width="30" height="30" rx="7" fill="#c4520a"/>
+          <path d="M7 22V9L15 16.5L23 9V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span style="font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-.3px">Miden Handbook</span>
+      </div>
+      <p class="foot-tag">A community guide to Miden — programmable privacy for the future of finance.</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <span class="foot-col-lbl">Miden</span>
+        <a href="https://miden.xyz/"            class="foot-link">Website</a>
+        <a href="https://miden.xyz/testnet"     class="foot-link">Testnet</a>
+        <a href="https://miden.xyz/roadmap"     class="foot-link">Roadmap</a>
+        <a href="https://miden.xyz/publications" class="foot-link">Publications</a>
+      </div>
+      <div class="foot-col">
+        <span class="foot-col-lbl">Build</span>
+        <a href="https://miden.xyz/developers"                  class="foot-link">Developers</a>
+        <a href="https://miden.xyz/ecosystem"                   class="foot-link">Ecosystem</a>
+        <a href="https://miden.xyz/ecosystem/program/pioneers"  class="foot-link">Pioneer Program</a>
+        <a href="https://miden.xyz/about"                       class="foot-link">About</a>
+      </div>
+      <div class="foot-col">
+        <span class="foot-col-lbl">Community</span>
+        <a href="https://x.com/0xMiden"       class="foot-link">Twitter / X</a>
+        <a href="https://t.me/BuildOnMiden"   class="foot-link">Telegram</a>
+        <a href="https://github.com/0xMiden"  class="foot-link">GitHub</a>
+        <a href="mailto:contact@miden.xyz"    class="foot-link">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-btm">
+    <span class="foot-copy">© 2025 Miden Handbook. Community resource — not official Miden documentation.</span>
+    <div class="socials">
+      <a href="https://x.com/0xMiden"      class="soc" title="Twitter/X">𝕏</a>
+      <a href="https://t.me/BuildOnMiden"  class="soc" title="Telegram">✈</a>
+      <a href="https://github.com/0xMiden" class="soc" title="GitHub">⌥</a>
+    </div>
+    <span class="foot-credit">Developed by <a href="#">Zeltrax</a></span>
+  </div>
+</footer>
+
+
+<!-- ══ SCROLL NAV BUTTONS ═════════════════════════ -->
+<div id="scroll-nav" aria-label="Page navigation">
+  <button class="scroll-nav-btn" id="scroll-up-btn" title="Back to top" aria-label="Scroll to top">
+    <svg viewBox="0 0 14 14" fill="none"><path d="M7 11V3M3 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="scroll-nav-btn" id="scroll-down-btn" title="Scroll to bottom" aria-label="Scroll to bottom">
+    <svg viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+
+<!-- ══ CHAPTER MODAL ══════════════════════════════ -->
+<div id="ch-modal-overlay" class="ch-modal-overlay" onclick="if(event.target===this)closeChapter()" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+  <div class="ch-modal">
+    <div class="ch-modal-head">
+      <div>
+        <span class="ch-modal-num" id="cm-num"></span>
+        <div class="ch-modal-title" id="cm-title"></div>
+      </div>
+      <button class="ch-modal-close" onclick="closeChapter()" aria-label="Close chapter">&#x2715;</button>
+    </div>
+    <div class="ch-modal-body" id="cm-body"></div>
+  </div>
+</div>
+
+
+<!-- ══ PROGRESS WIDGET ════════════════════════════ -->
+<div id="progress-widget" role="complementary" aria-label="Learning progress">
+  <div id="pw-mini-icon" aria-hidden="true">🏆</div>
+  <div id="pw-content">
+    <div id="pw-header">
+      <span id="pw-title">Your Progress</span>
+      <button id="pw-minimize" title="Minimize widget" aria-label="Minimize progress widget">−</button>
+    </div>
+    <div class="pw-stat">
+      <span class="pw-stat-label">🔥 Daily Streak</span>
+      <span class="pw-stat-val" id="pw-streak">0 days</span>
+    </div>
+    <div class="pw-stat">
+      <span class="pw-stat-label">📖 Terms Viewed</span>
+      <span class="pw-stat-val" id="pw-terms">0</span>
+    </div>
+    <div class="pw-stat">
+      <span class="pw-stat-label">🎯 Quiz Best</span>
+      <span class="pw-stat-val" id="pw-quiz-score">—</span>
+    </div>
+    <hr class="pw-divider" />
+    <div class="pw-badges" id="pw-badges">
+      <div class="pw-badge" data-badge="0" title="First Term — view your first glossary term">📖</div>
+      <div class="pw-badge" data-badge="1" title="10 Terms — view 10 different terms">🌟</div>
+      <div class="pw-badge" data-badge="2" title="50 Terms — view 50 different terms">🏆</div>
+      <div class="pw-badge" data-badge="3" title="Quiz Master — score 4/5 or better">🎯</div>
+      <div class="pw-badge" data-badge="4" title="Week Streak — visit 7 days in a row">🔥</div>
+    </div>
+    <button id="pw-quiz-btn">Take Privacy Quiz →</button>
+  </div>
+</div>
+
+
+<!-- ══ KNOWLEDGE QUIZ MODAL ═══════════════════════ -->
+<div id="quiz-modal" role="dialog" aria-modal="true" aria-label="Privacy knowledge quiz">
+  <div id="quiz-box">
+    <button id="quiz-close" aria-label="Close quiz">×</button>
+    <div id="quiz-progress-bar"><div id="quiz-progress-fill" style="width:0%"></div></div>
+    <div id="quiz-main">
+      <div id="quiz-q"></div>
+      <div id="quiz-opts"></div>
+      <div id="quiz-feedback" aria-live="polite"></div>
+      <button id="quiz-next">Next →</button>
+    </div>
+    <div id="quiz-score-screen">
+      <h3 id="quiz-final-score"></h3>
+      <p id="quiz-final-msg"></p>
+      <button onclick="closeQuiz()" style="padding:10px 24px;border-radius:100px;border:none;background:var(--orange);color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;-webkit-appearance:none">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ AI CHATBOT ════════════════════════════════ -->
+<button id="chat-btn" onclick="toggleChat()" aria-label="Open AI assistant" title="Ask Miden AI">
+  <span class="chat-icon chat-icon-msg" aria-hidden="true">💬</span>
+  <span class="chat-icon chat-icon-open" aria-hidden="true">×</span>
+</button>
+
+<div id="chat-panel" role="complementary" aria-label="Miden AI assistant">
+  <div id="chat-header">
+    <div class="chat-avatar" aria-hidden="true">🛡</div>
+    <div>
+      <div id="chat-header-name">Miden AI</div>
+      <div id="chat-header-status"><span class="status-dot"></span>Ask me anything</div>
+    </div>
+  </div>
+  <div id="chat-messages" aria-live="polite" aria-label="Chat messages">
+    <div class="chat-msg bot">Hey! I'm your Miden guide. Ask me about privacy, STARKs, zero-knowledge proofs, or anything in the glossary. 👋</div>
+    <div class="chat-suggestions">
+      <button class="chat-suggestion" onclick="sendSuggestion(this)">What is Miden?</button>
+      <button class="chat-suggestion" onclick="sendSuggestion(this)">Explain STARKs</button>
+      <button class="chat-suggestion" onclick="sendSuggestion(this)">How does privacy work?</button>
+      <button class="chat-suggestion" onclick="sendSuggestion(this)">What is ZK?</button>
+    </div>
+  </div>
+  <div id="chat-input-area">
+    <input id="chat-input" type="text" placeholder="Ask about Miden…" aria-label="Chat message input" onkeydown="if(event.key==='Enter')sendChat()" />
+    <button id="chat-send" onclick="sendChat()" aria-label="Send message">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<!-- ══ SCRIPTS (deferred, order matters) ═════════ -->
+<script src="js/chapters.js"    defer></script>
+<script src="js/glossary.js"    defer></script>
+<script src="js/interactive.js" defer></script>
+<script src="js/main.js"        defer></script>
+
+<!-- Keyboard: allow Enter on ch-card role=button -->
+<script>
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.getAttribute('role') === 'button') {
+    e.target.click();
+  }
+});
+</script>
+
+</body>
+</html>

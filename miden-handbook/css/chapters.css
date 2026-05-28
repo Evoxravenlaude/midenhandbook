@@ -1,0 +1,121 @@
+/* ════════════════════════════════════════════
+   MIDEN HANDBOOK — chapters.css
+   Chapter modal overlay and body styles
+═══════════════════════════════════════════ */
+
+.ch-modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 600;
+  background: rgba(24,18,10,.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  overflow-y: auto; padding: 24px 16px;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+.ch-modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+.ch-modal {
+  background: var(--bg); border: 1px solid var(--border-mid);
+  border-radius: 20px; max-width: 760px; width: 100%;
+  margin: auto; box-shadow: 0 32px 80px rgba(0,0,0,.18);
+  animation: modalIn .38s cubic-bezier(.16,1,.3,1);
+  overflow: hidden;
+}
+@keyframes modalIn { from{opacity:0;transform:translateY(28px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+.ch-modal-head {
+  padding: 32px 36px 24px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+}
+.ch-modal-num { font-family:"Geist Mono",monospace; font-size:10px; letter-spacing:1px; color:var(--t4); margin-bottom:6px; display:block; }
+.ch-modal-title { font-size:26px; font-weight:700; letter-spacing:-.8px; color:var(--ink); line-height:1.15; }
+.ch-modal-close {
+  width:44px; height:44px; border-radius:50%; border:1px solid var(--border);
+  background:none; cursor:pointer; font-size:20px; color:var(--t3); flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; transition:all .2s;
+  -webkit-appearance:none; appearance:none;
+}
+.ch-modal-close:hover { background:var(--bg-raised); color:var(--ink); }
+.ch-modal-body { padding:32px 36px; }
+.ch-modal-body h3 { font-size:14px; font-weight:600; color:var(--ink); margin:28px 0 10px; display:flex; align-items:center; gap:8px; }
+.ch-modal-body h3:first-child { margin-top:0; }
+.sec-num { width:20px; height:20px; border-radius:5px; background:var(--op); border:1px solid rgba(196,82,10,.18); font-family:"Geist Mono",monospace; font-size:9px; color:var(--orange); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ch-modal-body p { font-size:14px; line-height:1.72; color:var(--t2); margin-bottom:14px; }
+.ch-modal-body ul { list-style:none; padding:0; margin-bottom:14px; }
+.ch-modal-body ul li { font-size:14px; line-height:1.65; color:var(--t2); padding:8px 0 8px 20px; position:relative; border-bottom:1px solid var(--border); }
+.ch-modal-body ul li:last-child { border-bottom:none; }
+.ch-modal-body ul li::before { content:"→"; position:absolute; left:0; color:var(--orange); font-size:11px; top:10px; }
+.ch-modal-body strong { color:var(--ink); font-weight:600; }
+.ch-modal-body em { color:var(--ink); font-style:italic; }
+.ch-modal-body code { font-family:"Geist Mono",monospace; font-size:12px; background:var(--bg-raised); border:1px solid var(--border); padding:2px 7px; border-radius:5px; color:var(--orange); }
+
+/* ── DIAGRAM BLOCKS ──────────────────────── */
+.ch-diagram { border:1px solid var(--border); border-radius:12px; background:var(--bg-raised); margin:16px 0; overflow:hidden; }
+.flow-diagram { display:flex; align-items:center; justify-content:center; gap:0; padding:20px; flex-wrap:wrap; row-gap:12px; }
+.flow-node { display:flex; flex-direction:column; align-items:center; gap:5px; text-align:center; }
+.flow-box { padding:10px 16px; border-radius:9px; border:1px solid var(--border-mid); background:var(--bg); font-size:12px; font-weight:600; color:var(--ink); box-shadow:0 2px 8px rgba(0,0,0,.05); white-space:nowrap; }
+.flow-box.accent { background:linear-gradient(135deg,var(--orange),var(--ob)); color:#fff; border-color:transparent; }
+.flow-box.soft { background:var(--op); border-color:rgba(196,82,10,.2); color:var(--orange); }
+.flow-sub { font-size:10px; font-family:"Geist Mono",monospace; color:var(--t4); letter-spacing:.5px; }
+.flow-arr { font-size:16px; color:var(--border-mid); padding:0 8px; flex-shrink:0; align-self:center; margin-bottom:16px; }
+.arch-layers { padding:16px 20px; display:flex; flex-direction:column; gap:8px; }
+.arch-layer { padding:12px 16px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; gap:12px; animation:layerSlide .5s cubic-bezier(.16,1,.3,1) both; }
+.arch-layer:nth-child(1){animation-delay:.05s}.arch-layer:nth-child(2){animation-delay:.15s}.arch-layer:nth-child(3){animation-delay:.25s}.arch-layer:nth-child(4){animation-delay:.35s}.arch-layer:nth-child(5){animation-delay:.45s}
+@keyframes layerSlide { from{opacity:0;transform:translateX(-10px)} to{opacity:1;transform:translateX(0)} }
+.arch-layer-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.arch-layer-name { font-size:13px; font-weight:600; color:var(--ink); flex:1; }
+.arch-layer-desc { font-size:11px; color:var(--t3); font-family:"Geist Mono",monospace; }
+
+/* ── STEP BLOCKS ─────────────────────────── */
+.ch-step { display:flex; gap:14px; padding:14px 0; border-bottom:1px solid var(--border); }
+.ch-step:last-of-type { border-bottom:none; }
+.ch-step-n { width:28px; height:28px; border-radius:8px; flex-shrink:0; background:linear-gradient(135deg,var(--orange),var(--ob)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; font-family:"Geist Mono",monospace; }
+.ch-step-t { font-size:14px; font-weight:600; color:var(--ink); margin-bottom:4px; }
+.ch-step-d { font-size:13px; color:var(--t2); line-height:1.6; }
+
+/* ── CODE BLOCKS ─────────────────────────── */
+.code-block { background:var(--bg-raised); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin:12px 0 20px; font-family:"Geist Mono",monospace; font-size:12px; color:var(--t2); line-height:1.8; overflow-x:auto; white-space:pre; -webkit-overflow-scrolling:touch; }
+.code-block .cm { color:var(--t4); }
+.code-block .ck { color:#c4520a; }
+.code-block .cs { color:#8b5e3c; }
+
+/* ── PILLS ───────────────────────────────── */
+.ch-pill-row { display:flex; flex-wrap:wrap; gap:7px; margin:12px 0; }
+.ch-pill { font-size:12px; padding:5px 12px; border-radius:20px; border:1px solid var(--border-mid); color:var(--t2); background:var(--bg-raised); font-family:"Geist Mono",monospace; }
+.ch-pill.hot { border-color:rgba(196,82,10,.3); color:var(--orange); background:var(--op); }
+
+/* ── PRIVACY SPECTRUM ────────────────────── */
+.priv-spectrum { padding:20px 24px; }
+.spectrum-bar { height:8px; border-radius:4px; margin:16px 0 8px; background:linear-gradient(90deg,#2da44e 0%,#c4520a 50%,#cf222e 100%); }
+.spectrum-labels { display:flex; justify-content:space-between; font-size:11px; font-family:"Geist Mono",monospace; color:var(--t3); }
+.spectrum-items { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:16px; }
+.spectrum-item { padding:10px 12px; border-radius:8px; border:1px solid var(--border); }
+.si-label { font-size:11px; font-weight:600; color:var(--ink); margin-bottom:4px; }
+.si-desc  { font-size:11px; color:var(--t3); line-height:1.4; }
+.spectrum-item.si-priv { border-color:rgba(45,164,78,.2); background:rgba(45,164,78,.05); }
+.spectrum-item.si-mix  { border-color:rgba(196,82,10,.2); background:var(--op); }
+.spectrum-item.si-pub  { border-color:rgba(196,82,10,.25); background:rgba(196,82,10,.06); }
+
+/* ── PROBLEM/COMPARE BLOCKS (ch02) ──────── */
+.prob-row {
+  display:flex; align-items:flex-start; gap:14px;
+  padding:14px 0; border-bottom:1px solid var(--border);
+  animation:layerSlide .45s cubic-bezier(.16,1,.3,1) both;
+  animation-delay:var(--delay, 0s);
+}
+.prob-row:last-child { border-bottom:none; }
+.prob-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+.prob-title { font-size:13px; font-weight:600; color:var(--ink); margin-bottom:3px; }
+.prob-desc  { font-size:12px; color:var(--t3); line-height:1.5; }
+.compare-card { padding:12px 14px; border-radius:9px; border:1px solid var(--border); background:var(--bg); }
+.compare-card.bad  { border-color:var(--border); }
+.compare-card.good { border-color:rgba(196,82,10,.25); background:var(--op); }
+.compare-name { font-size:12px; font-weight:700; color:var(--ink); margin-bottom:5px; }
+.compare-card.good .compare-name { color:var(--orange); }
+.compare-desc { font-size:11px; color:var(--t3); line-height:1.5; }
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media(max-width:640px){
+  .ch-modal-head,.ch-modal-body { padding:22px 20px; }
+  .ch-modal-title { font-size:20px; }
+  .spectrum-items { grid-template-columns:1fr; }
+  .flow-arr { display:none; }
+}
